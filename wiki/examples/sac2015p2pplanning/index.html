@@ -16,21 +16,21 @@
 
 
 
-<title>[0.1.0] Peer-to-peer route planning</title>
+<title>Peer-to-peer route planning</title>
 
 
 <meta name="description" content="Practical language for aggregate programming.">
 
 
 
-<link rel="prev" href="https://protelis.github.io/wiki-beta/wiki/examples/quanticol2016">
+<link rel="prev" href="https://protelis.github.io/wiki-beta/wiki/examples/ecas2016crowddispersal">
 
 
 <link rel="next" href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015networkmanagement">
 
 
 <script>
-    window.site = {"orchidVersion":"0.17.6","baseUrl":"https://protelis.github.io/wiki-beta","environment":"debug","version":"13.1.0-dev0e+5eff8185"};
+    window.site = {"orchidVersion":"0.17.6","baseUrl":"https://protelis.github.io/wiki-beta","environment":"debug","version":"13.1.0-dev0f+6aed1deb"};
 </script>
 
 
@@ -57,7 +57,7 @@
 
 <!-- COMPLETE PAGE CONFIGURATION -->
 <script>
-    window.allData = {"reference":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"sac2015p2pplanning","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning"},"next":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"sac2015networkmanagement","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/sac2015networkmanagement"},"previous":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"quanticol2016","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/quanticol2016"},"description":"","title":"[0.1.0] Peer-to-peer route planning"};
+    window.allData = {"reference":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"sac2015p2pplanning","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning"},"next":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"sac2015networkmanagement","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/sac2015networkmanagement"},"previous":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"ecas2016crowddispersal","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/ecas2016crowddispersal"},"description":"","title":"Peer-to-peer route planning"};
 </script>
 
 <!-- end:debug info -->
@@ -153,11 +153,13 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Examples and demos<span class="caret"></span></a>
                             <ul class="dropdown-menu scrollable-menu">
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/quanticol2016">[13.1.0-dev0e+5eff8185] Crowd danger estimation and warning</a></li>
+                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/ieeecomputer2015crowdtracking">Crowd danger estimation and warning</a></li>
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning">[0.1.0] Peer-to-peer route planning</a></li>
+                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/ecas2016crowddispersal">Crowd dispersal service</a></li>
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015networkmanagement">[0.1.0] Network services management</a></li>
+                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning">Peer-to-peer route planning</a></li>
+                                
+                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015networkmanagement">Network services management</a></li>
                                 
                             </ul>
                         </li>
@@ -174,7 +176,7 @@
 
     <div class="bs-docs-masthead" id="jumbotron">
         <div class="container">
-            <h1 class="home-title">[0.1.0] Peer-to-peer route planning</h1>
+            <h1 class="home-title">Peer-to-peer route planning</h1>
         </div>
     </div>
 
@@ -190,7 +192,7 @@
     
     
     
-        <li class="breadcrumb-item active" aria-current="page">[0.1.0] Peer-to-peer route planning</li>
+        <li class="breadcrumb-item active" aria-current="page">Peer-to-peer route planning</li>
     
     
     </ul>
@@ -206,10 +208,11 @@
             
                 
                     
-                        <p><strong>Note:</strong> This example uses an old version of Protelis. As such, the provided code might not work with newer releases.</p>
-<h1 id="peer-to-peer-route-planning">Peer-to-peer route planning</h1>
+                        <p><strong>Note:</strong> This example uses Protelis version 0.1.0, while current version is 13.1.0-dev0f+6aed1deb.
+As such, the provided code might not work with newer releases.</p>
 <p>This example has been presented in the paper:</p>
-<p><a href="https://doi.org/10.1145/2695664.2695913"><strong>Protelis: Practical Aggregate Programming</strong> <em>by Danilo Pianini, Mirko Viroli, Jacob Beal; published in the Proceedings of the 30th Annual ACM Symposium on Applied Computing, April 2015</em></a></p>
+<p><a href="https://doi.org/10.1145/2695664.2695913"><strong>Protelis: Practical Aggregate Programming</strong> <em>by Danilo Pianini, Mirko Viroli, and Jacob Beal; published in the Proceedings of the 30th Annual ACM Symposium on Applied Computing, April 2015</em></a></p>
+<h1 id="peer-to-peer-route-planning">Peer-to-peer route planning</h1>
 <p>When two people want to meet up at a large event, they may be hampered when a pre-arranged rendezvous point turns out to be inconvenient,
 while any centralized services for real-time coordination are overwhelmed by demand.
 Peer-to-peer calculations between participating devices could guide the two friends to meet at an intermediate location,
@@ -301,9 +304,9 @@ and nearby devices that are on the shortest path between them start to be select
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="https://protelis.github.io/wiki-beta/wiki/examples/quanticol2016">
+                            <a href="https://protelis.github.io/wiki-beta/wiki/examples/ecas2016crowddispersal">
                                 <span aria-hidden="true">&larr;</span>
-                                <span>[13.1.0-dev0e+5eff8185] Crowd danger estimation and warning</span>
+                                <span>Crowd dispersal service</span>
                             </a>
                         </li>
                     
@@ -311,7 +314,7 @@ and nearby devices that are on the shortest path between them start to be select
                     
                         <li class="next">
                             <a href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015networkmanagement">
-                                <span>[0.1.0] Network services management</span>
+                                <span>Network services management</span>
                                 <span aria-hidden="true">&rarr;</span>
                             </a>
                         </li>
@@ -336,7 +339,7 @@ and nearby devices that are on the shortest path between them start to be select
 </p>
 
 <ul class="bs-docs-footer-links muted">
-    <li>Currently 13.1.0-dev0e+5eff8185</li>
+    <li>Currently 13.1.0-dev0f+6aed1deb</li>
 </ul>
 
 </footer>

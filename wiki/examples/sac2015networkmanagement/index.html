@@ -16,7 +16,7 @@
 
 
 
-<title>[0.1.0] Network services management</title>
+<title>Network services management</title>
 
 
 <meta name="description" content="Practical language for aggregate programming.">
@@ -28,7 +28,7 @@
 
 
 <script>
-    window.site = {"orchidVersion":"0.17.6","baseUrl":"https://protelis.github.io/wiki-beta","environment":"debug","version":"13.1.0-dev0e+5eff8185"};
+    window.site = {"orchidVersion":"0.17.6","baseUrl":"https://protelis.github.io/wiki-beta","environment":"debug","version":"13.1.0-dev0f+6aed1deb"};
 </script>
 
 
@@ -55,7 +55,7 @@
 
 <!-- COMPLETE PAGE CONFIGURATION -->
 <script>
-    window.allData = {"reference":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"sac2015networkmanagement","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/sac2015networkmanagement"},"previous":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"sac2015p2pplanning","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning"},"description":"","title":"[0.1.0] Network services management"};
+    window.allData = {"reference":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"sac2015networkmanagement","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/sac2015networkmanagement"},"previous":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"sac2015p2pplanning","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning"},"description":"","title":"Network services management"};
 </script>
 
 <!-- end:debug info -->
@@ -151,11 +151,13 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Examples and demos<span class="caret"></span></a>
                             <ul class="dropdown-menu scrollable-menu">
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/quanticol2016">[13.1.0-dev0e+5eff8185] Crowd danger estimation and warning</a></li>
+                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/ieeecomputer2015crowdtracking">Crowd danger estimation and warning</a></li>
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning">[0.1.0] Peer-to-peer route planning</a></li>
+                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/ecas2016crowddispersal">Crowd dispersal service</a></li>
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015networkmanagement">[0.1.0] Network services management</a></li>
+                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning">Peer-to-peer route planning</a></li>
+                                
+                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015networkmanagement">Network services management</a></li>
                                 
                             </ul>
                         </li>
@@ -172,7 +174,7 @@
 
     <div class="bs-docs-masthead" id="jumbotron">
         <div class="container">
-            <h1 class="home-title">[0.1.0] Network services management</h1>
+            <h1 class="home-title">Network services management</h1>
         </div>
     </div>
 
@@ -188,7 +190,7 @@
     
     
     
-        <li class="breadcrumb-item active" aria-current="page">[0.1.0] Network services management</li>
+        <li class="breadcrumb-item active" aria-current="page">Network services management</li>
     
     
     </ul>
@@ -204,10 +206,11 @@
             
                 
                     
-                        <p><strong>Note:</strong> This example uses an old version of Protelis. As such, the provided code might not work with newer releases.</p>
-<h1 id="network-services-management">Network services management</h1>
+                        <p><strong>Note:</strong> This example uses Protelis version 0.1.0, while current version is 13.1.0-dev0f+6aed1deb.
+As such, the provided code might not work with newer releases.</p>
 <p>This example has been presented in the paper:</p>
-<p><a href="https://doi.org/10.1145/2695664.2695913"><strong>Protelis: Practical Aggregate Programming</strong> <em>by Danilo Pianini, Mirko Viroli, Jacob Beal; published in the Proceedings of the 30th Annual ACM Symposium on Applied Computing, April 2015</em></a></p>
+<p><a href="https://doi.org/10.1145/2695664.2695913"><strong>Protelis: Practical Aggregate Programming</strong> <em>by Danilo Pianini, Mirko Viroli, and Jacob Beal; published in the Proceedings of the 30th Annual ACM Symposium on Applied Computing, April 2015</em></a></p>
+<h1 id="network-services-management">Network services management</h1>
 <p>A common problem in managing enterprise services is a failure in one or more services can cause the overall system to get wedged,
 due to many dependences between different services and server.
 After such a failure cascade, the network can only become fully functional by restarting the servers and services in the correct order.
@@ -309,7 +312,7 @@ let nbr_down = nbr(managedServiceStatus == &quot;hung&quot; || managedServiceSta
                         <li class="previous">
                             <a href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning">
                                 <span aria-hidden="true">&larr;</span>
-                                <span>[0.1.0] Peer-to-peer route planning</span>
+                                <span>Peer-to-peer route planning</span>
                             </a>
                         </li>
                     
@@ -335,7 +338,7 @@ let nbr_down = nbr(managedServiceStatus == &quot;hung&quot; || managedServiceSta
 </p>
 
 <ul class="bs-docs-footer-links muted">
-    <li>Currently 13.1.0-dev0e+5eff8185</li>
+    <li>Currently 13.1.0-dev0f+6aed1deb</li>
 </ul>
 
 </footer>

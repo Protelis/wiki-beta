@@ -16,21 +16,21 @@
 
 
 
-<title>[13.1.0-dev0e+5eff8185] Crowd danger estimation and warning</title>
+<title>Crowd dispersal service</title>
 
 
 <meta name="description" content="Practical language for aggregate programming.">
 
 
 
-<link rel="prev" href="https://protelis.github.io/wiki-beta/wiki/examples">
+<link rel="prev" href="https://protelis.github.io/wiki-beta/wiki/examples/ieeecomputer2015crowdtracking">
 
 
 <link rel="next" href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning">
 
 
 <script>
-    window.site = {"orchidVersion":"0.17.6","baseUrl":"https://protelis.github.io/wiki-beta","environment":"debug","version":"13.1.0-dev0e+5eff8185"};
+    window.site = {"orchidVersion":"0.17.6","baseUrl":"https://protelis.github.io/wiki-beta","environment":"debug","version":"13.1.0-dev0f+6aed1deb"};
 </script>
 
 
@@ -52,12 +52,12 @@
 <!-- Resolved Page Template:  -->
 
 <!-- RESOURCE -->
-<!-- Class: com.eden.orchid.api.resources.resource.StringResource -->
-<!-- Source Filename: wiki/examples/quanticol2016/index.md -->
+<!-- Class: com.eden.orchid.api.resources.resource.FileResource -->
+<!-- Source Filename: wiki/examples/ecas2016crowddispersal.md -->
 
 <!-- COMPLETE PAGE CONFIGURATION -->
 <script>
-    window.allData = {"reference":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"quanticol2016","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/quanticol2016"},"next":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"sac2015p2pplanning","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning"},"previous":{"path":"wiki","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"examples","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples"},"description":"","title":"[13.1.0-dev0e+5eff8185] Crowd danger estimation and warning"};
+    window.allData = {"reference":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"ecas2016crowddispersal","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/ecas2016crowddispersal"},"next":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"sac2015p2pplanning","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning"},"previous":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"ieeecomputer2015crowdtracking","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/ieeecomputer2015crowdtracking"},"description":"","title":"Crowd dispersal service"};
 </script>
 
 <!-- end:debug info -->
@@ -153,11 +153,13 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Examples and demos<span class="caret"></span></a>
                             <ul class="dropdown-menu scrollable-menu">
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/quanticol2016">[13.1.0-dev0e+5eff8185] Crowd danger estimation and warning</a></li>
+                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/ieeecomputer2015crowdtracking">Crowd danger estimation and warning</a></li>
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning">[0.1.0] Peer-to-peer route planning</a></li>
+                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/ecas2016crowddispersal">Crowd dispersal service</a></li>
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015networkmanagement">[0.1.0] Network services management</a></li>
+                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning">Peer-to-peer route planning</a></li>
+                                
+                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015networkmanagement">Network services management</a></li>
                                 
                             </ul>
                         </li>
@@ -174,7 +176,7 @@
 
     <div class="bs-docs-masthead" id="jumbotron">
         <div class="container">
-            <h1 class="home-title">[13.1.0-dev0e+5eff8185] Crowd danger estimation and warning</h1>
+            <h1 class="home-title">Crowd dispersal service</h1>
         </div>
     </div>
 
@@ -190,7 +192,7 @@
     
     
     
-        <li class="breadcrumb-item active" aria-current="page">[13.1.0-dev0e+5eff8185] Crowd danger estimation and warning</li>
+        <li class="breadcrumb-item active" aria-current="page">Crowd dispersal service</li>
     
     
     </ul>
@@ -206,7 +208,25 @@
             
                 
                     
-                        <p>[13.1.0-dev0e+5eff8185] Crowd danger estimation and warning</p>
+                        <p><strong>Note:</strong> This example uses Protelis version 0.1.0, while current version is 13.1.0-dev0f+6aed1deb.
+As such, the provided code might not work with newer releases.</p>
+<p>This example has been presented in the paper:</p>
+<p><a href="https://doi.org/10.1109/FAS-W.2016.49"><strong>Combining Self-Organisation and Autonomic Computing in CASs with Aggregate-MAPE</strong> <em>by Mirko Viroli, Antonio Bucchiarone, Danilo Pianini, and Jacob Beal; published in the 2016 IEEE 1st International Workshops on Foundations and Applications of Self</em> Systems (FAS<em>W)</em></a>
+<strong>Note:</strong> This example uses an old Protelis version 8.0.3, while current version is 13.1.0-dev0f+6aed1deb.
+As such, the provided code might not work as intended with newer releases.</p>
+<h1 id="crowd-dispersal-service">Crowd dispersal service</h1>
+<p>The source code and instructions on how to reproduce are <a href="https://bitbucket.org/danysk/experiment-2016-ecas/">available online</a>.</p>
+<p>This example is an extension of <a href="https://protelis.github.io/wiki-beta/wiki/examples/ieeecomputer2015crowdtracking">the example presented in &quot;crowd danger estimation and warning&quot;</a>.
+Besides detection and warning, it feature a simple dispersal service, advising users not to proceed on their destination,
+but instead suggesting alternatives to prevent overcrowding.</p>
+<div style="position:relative;padding-top:56.25%;">
+<iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/606ObQwQuaE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p>This is an accelerated video showing a crowd dispersal application using the Alchemist simulator.
+Each black dot is a handheld device, following real movement traces from the 2013 Vienna City Marathon.
+Red dots are devices warned as being in dangerously crowded areas,
+and yellow dots are devices warned that they are nearing a dangerously crowded area.
+Blue dots represent people who follow the crowd dispersal application’s advice.</p>
 
                     
                 
@@ -257,9 +277,9 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="https://protelis.github.io/wiki-beta/wiki/examples">
+                            <a href="https://protelis.github.io/wiki-beta/wiki/examples/ieeecomputer2015crowdtracking">
                                 <span aria-hidden="true">&larr;</span>
-                                <span>Examples and demos</span>
+                                <span>Crowd danger estimation and warning</span>
                             </a>
                         </li>
                     
@@ -267,7 +287,7 @@
                     
                         <li class="next">
                             <a href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning">
-                                <span>[0.1.0] Peer-to-peer route planning</span>
+                                <span>Peer-to-peer route planning</span>
                                 <span aria-hidden="true">&rarr;</span>
                             </a>
                         </li>
@@ -292,7 +312,7 @@
 </p>
 
 <ul class="bs-docs-footer-links muted">
-    <li>Currently 13.1.0-dev0e+5eff8185</li>
+    <li>Currently 13.1.0-dev0f+6aed1deb</li>
 </ul>
 
 </footer>

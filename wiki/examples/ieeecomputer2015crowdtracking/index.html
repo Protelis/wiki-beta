@@ -16,17 +16,17 @@
 
 
 
-<title>Creating Releases</title>
+<title>Crowd danger estimation and warning</title>
 
 
 <meta name="description" content="Practical language for aggregate programming.">
 
 
 
-<link rel="prev" href="https://protelis.github.io/wiki-beta/wiki/develop/structure">
+<link rel="prev" href="https://protelis.github.io/wiki-beta/wiki/examples">
 
 
-<link rel="next" href="https://protelis.github.io/wiki-beta/wiki/examples">
+<link rel="next" href="https://protelis.github.io/wiki-beta/wiki/examples/ecas2016crowddispersal">
 
 
 <script>
@@ -52,12 +52,12 @@
 <!-- Resolved Page Template:  -->
 
 <!-- RESOURCE -->
-<!-- Class: com.eden.orchid.api.resources.resource.StringResource -->
-<!-- Source Filename: wiki/develop/releases/index.md -->
+<!-- Class: com.eden.orchid.api.resources.resource.FileResource -->
+<!-- Source Filename: wiki/examples/ieeecomputer2015crowdtracking.md -->
 
 <!-- COMPLETE PAGE CONFIGURATION -->
 <script>
-    window.allData = {"reference":{"path":"wiki/develop","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"releases","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/develop/releases"},"next":{"path":"wiki","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"examples","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples"},"previous":{"path":"wiki/develop","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"structure","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/develop/structure"},"description":"","title":"Creating Releases"};
+    window.allData = {"reference":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"ieeecomputer2015crowdtracking","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/ieeecomputer2015crowdtracking"},"next":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"ecas2016crowddispersal","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/ecas2016crowddispersal"},"previous":{"path":"wiki","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"examples","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples"},"description":"","title":"Crowd danger estimation and warning"};
 </script>
 
 <!-- end:debug info -->
@@ -176,7 +176,7 @@
 
     <div class="bs-docs-masthead" id="jumbotron">
         <div class="container">
-            <h1 class="home-title">Creating Releases</h1>
+            <h1 class="home-title">Crowd danger estimation and warning</h1>
         </div>
     </div>
 
@@ -192,7 +192,7 @@
     
     
     
-        <li class="breadcrumb-item active" aria-current="page">Creating Releases</li>
+        <li class="breadcrumb-item active" aria-current="page">Crowd danger estimation and warning</li>
     
     
     </ul>
@@ -208,7 +208,49 @@
             
                 
                     
-                        <p>Creating Releases</p>
+                        <p><strong>Note:</strong> This example uses Protelis version 0.8.3, while current version is 13.1.0-dev0f+6aed1deb.
+As such, the provided code might not work with newer releases.</p>
+<p>This example has been presented in the paper:</p>
+<p><a href="https://doi.org/10.1109/MC.2015.261"><strong>Aggregate Programming for the Internet of Things</strong> <em>by Jacob Beal, Danilo Pianini, and Mirko Viroli; published in IEEE Computer</em></a></p>
+<p>Any time an event or attraction draws a crowd,
+individuals may continue to move into the most crowded areas and inadvertently obstruct egress,
+creating dangerously dense-packed locations vulnerable to stampedes.
+In addition to the motivation of avoiding danger,
+people may also want to avoid highly congested spots because the experience is unpleasant.
+Distributed sensing and computing can help solve this problem.</p>
+<p>Using Protelis and the principles of aggregate programming,
+it is straightforward to write a scalable and robust distributed application to detect severe crowding and help individuals navigate around highly congested areas.
+We illustrate the use of several core Protelis operators and built-in functions.</p>
+<p>Using some of Protelis’s special operators and syntax, a small number of functions can be defined and applied to variables.
+A crowd safety service can use information about the number of nearby devices to issue warnings about areas with dangerous crowding levels.</p>
+<p>The function <code>dangerousDensity</code> flags whether a location has a high or low danger.
+The function determines danger by estimating the local density of people,
+using the values of p (proportion of people with a participating device running this app),
+r (the radius of interest),
+and checking large groups of people (&gt;300) against a density danger cut-off value of 2.17 people per square meter.</p>
+<pre><code class="language-javascript">def dangerousDensity(p, r) {
+  let mr =  managementRegions(r*2, () -&gt; { nbrRange });
+  let danger =  average(mr, densityEst(p, r)) &gt; 2.17 &amp;&amp; summarize(mr, sum, 1 / p, 0 ) &gt; 300;
+  if(danger) { high } else { low }
+}
+</code></pre>
+<p>The function <code>crowdTracking</code> checks for a dangerous density in crowded areas, where 1.08 people per square meter is used as the cut-off to define crowded.</p>
+<pre><code class="language-javascript">def crowdTracking(p, r, t) {
+  let crowdRgn =  recentTrue(densityEst(p, r) &gt; 1.08, t);
+  if(crowdRgn) { densityEst(p, r) } else { none }
+}
+</code></pre>
+<p>The function <code>crowdWarning</code> alerts individuals who are near dangerously crowded spots.</p>
+<pre><code class="language-javascript">def crowdWarning(p, r, warn, t) {
+  distanceTo(crowdTracking(p, r, t) == high) &lt; warn
+}
+</code></pre>
+<p><img src="https://protelis.github.io/wiki-beta/assets/media/images/examples/ieeecomputer2015crowdtracking/marathon.png" alt="Vienna Marathon" /></p>
+<p>In this simulation of the 2013 Vienna Marathon, dots represent devices running the crowd safety service.
+Red dots are devices in locations with potentially dangerous crowd density and yellow dots are devices providing crowd density warnings.</p>
+<p><img src="https://protelis.github.io/wiki-beta/assets/media/images/examples/ieeecomputer2015crowdtracking/crowd-management.jpg" alt="Crowd Management" /></p>
+<p>In this simulation of public events near the Boston waterfront, dots represent devices running the crowd safety service.
+Red dots are devices in locations with potentially dangerous crowd density and yellow dots are devices providing crowd density warnings.</p>
 
                     
                 
@@ -259,17 +301,17 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="https://protelis.github.io/wiki-beta/wiki/develop/structure">
+                            <a href="https://protelis.github.io/wiki-beta/wiki/examples">
                                 <span aria-hidden="true">&larr;</span>
-                                <span>Project structure</span>
+                                <span>Examples and demos</span>
                             </a>
                         </li>
                     
 
                     
                         <li class="next">
-                            <a href="https://protelis.github.io/wiki-beta/wiki/examples">
-                                <span>Examples and demos</span>
+                            <a href="https://protelis.github.io/wiki-beta/wiki/examples/ecas2016crowddispersal">
+                                <span>Crowd dispersal service</span>
                                 <span aria-hidden="true">&rarr;</span>
                             </a>
                         </li>
