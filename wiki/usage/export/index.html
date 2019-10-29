@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+
+
+<meta charset="utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+<meta name="generator" content="Orchid 0.17.5"/>
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+
+
+<meta name="robots" content="index, follow">
+
+
+
+<title>Exporting data</title>
+
+
+<meta name="description" content="Practical aggregate programming.">
+
+
+
+<link rel="prev" href="http://localhost:8080/wiki/usage/maps">
+
+
+<link rel="next" href="http://localhost:8080/wiki/usage/batch">
+
+
+<script>
+    window.site = {"orchidVersion":"0.17.5","baseUrl":"http://localhost:8080","environment":"debug","version":"13.0.3-dev18+2bb83c70"};
+</script>
+
+
+
+
+
+<!-- start:debug info -->
+
+<!-- THEME -->
+<!-- Type: BsDoc -->
+<!-- Class: com.eden.orchid.bsdoc.BSDocTheme -->
+
+<!-- PAGE -->
+<!-- Type: wiki -->
+<!-- Class: com.eden.orchid.wiki.pages.WikiPage -->
+<!-- Layout: index -->
+<!-- Resolved Layout: templates/layouts/index.peb -->
+<!-- Page Template: wiki, page -->
+<!-- Resolved Page Template:  -->
+
+<!-- RESOURCE -->
+<!-- Class: com.eden.orchid.api.resources.resource.FileResource -->
+<!-- Source Filename: wiki/usage/export.md -->
+
+<!-- COMPLETE PAGE CONFIGURATION -->
+<script>
+    window.allData = {"reference":{"path":"wiki/usage","baseUrl":"http://localhost:8080","fileName":"export","extension":"html","usePrettyUrl":true,"link":"http://localhost:8080/wiki/usage/export"},"next":{"path":"wiki/usage","baseUrl":"http://localhost:8080","fileName":"batch","extension":"html","usePrettyUrl":true,"link":"http://localhost:8080/wiki/usage/batch"},"previous":{"path":"wiki/usage","baseUrl":"http://localhost:8080","fileName":"maps","extension":"html","usePrettyUrl":true,"link":"http://localhost:8080/wiki/usage/maps"},"description":"","title":"Exporting data"};
+</script>
+
+<!-- end:debug info -->
+
+
+
+<!-- start:inject styles -->
+<link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/BsDoc/447b9123/assets/css/bsdoc.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/assets/css/pygments.css"/>
+<link rel="stylesheet" type="text/css" href="https://rawgit.com/PrismJS/prism-themes/master/themes/prism-ghcolors.css"/>
+<!-- end:inject styles -->
+
+
+</head>
+<body>
+
+
+
+
+<a class="github-fork-ribbon left-top"
+   href="https://github.com/Protelis/Protelis"
+   title="Fork me on GitHub">Fork me on GitHub</a>
+
+
+<header class="navbar navbar-fixed-top bs-docs-nav">
+    <div class="container">
+        <div class="navbar-header" role="banner">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://localhost:8080">Protelis: the language for aggregate computing</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    
+                        <li><a href="http://localhost:8080">Home</a></li>
+                    
+                
+                    
+                        <li><a href="">Documentation</a></li>
+                    
+                
+                    
+                        <li><a href="http://localhost:8080/wiki/quickstart">Quick start</a></li>
+                    
+                
+                    
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tutorials<span class="caret"></span></a>
+                            <ul class="dropdown-menu scrollable-menu">
+                                
+                                    <li><a href="http://localhost:8080/wiki/tutorials/alchemist">Simulations with Alchemist</a></li>
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li><a href="http://localhost:8080/wiki/language">Undestand</a></li>
+                    
+                
+                    
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">understand<span class="caret"></span></a>
+                            <ul class="dropdown-menu scrollable-menu">
+                                
+                                    <li><a href="http://localhost:8080/wiki/understand/basics">Aggregate programming basics</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/understand/architecture">Protelis&#39; architecture</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/understand/syntax">Upgrade guide</a></li>
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Use<span class="caret"></span></a>
+                            <ul class="dropdown-menu scrollable-menu">
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/installation">Requirements and installation</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/quickstart">Quick start</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/gui">Alchemist graphical interface</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/biochemistry">Alchemist biochemistry incarnation</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/protelis">Alchemist Protelis incarnation</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/sapere">SAPERE</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/scafi">Scafi</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/indoor">Simulation of indoor environments</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/cognitive-agents">Using Cognitive Agents</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/smartcam">With Smart Cameras</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/maps">Maps and GPS traces</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/export">Exporting data</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/batch">Executing batches</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/grid">Grid computing support</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/customization">Writing custom components</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/issues">Troubleshooting and known issues</a></li>
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Simulation examples<span class="caret"></span></a>
+                            <ul class="dropdown-menu scrollable-menu">
+                                
+                                    <li><a href="http://localhost:8080/wiki/examples/protelis">With Protelis</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/examples/scafi">With Scafi</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/examples/maps">On maps</a></li>
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li><a href="http://localhost:8080/wiki/license">License</a></li>
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<div id="top"></div>
+
+
+    <div class="bs-docs-masthead" id="jumbotron">
+        <div class="container">
+            <h1 class="home-title">Exporting data</h1>
+        </div>
+    </div>
+
+
+<div class="container bs-docs-container">
+    <div class="row">
+        <div class="col-md-9" role="main">
+        <nav aria-label="breadcrumb">
+    <ul class="breadcrumb">
+    
+    
+        <li class="breadcrumb-item"><a href="http://localhost:8080/wiki">Wiki</a></li>
+    
+    
+    
+        <li class="breadcrumb-item active" aria-current="page">Exporting data</li>
+    
+    
+    </ul>
+</nav>
+        
+
+        
+        
+            
+    <!-- start:inject components -->
+    
+        
+            
+                
+                    
+                        <h2 id="defining-exported-data">Defining exported data</h2>
+<p>Data expected as output can be exported by telling Alchemist what to log, and by passing to the executable information
+on where to export.</p>
+<p>The <code>export</code> section lists which simulation values are exported into the <code>folder</code> specified with the <code>-e path/to/folder</code>
+argument.</p>
+<h3 id="aggregating-data">Aggregating data</h3>
+<p>Data aggregators are statistically univariate.
+Valid aggregation functions must extend <a href="http://commons.apache.org/proper/commons-math/javadocs/api-3.4/org/apache/commons/math3/stat/descriptive/AbstractStorelessUnivariateStatistic.html">AbstractStorelessUnivariateStatistic</a>.</p>
+<p><strong>Examples</strong></p>
+<pre><code class="language-yaml">export:
+  # Time step of the simulation
+  - time
+  # Number of nodes involved in the simulation
+  - number-of-nodes
+  # Molecule representing an aggregated value
+  - molecule: danger
+    aggregators: [sum]
+</code></pre>
+<h3 id="filtering-unwanted-values">Filtering unwanted values</h3>
+<p>TODO</p>
+
+                    
+                
+            
+        
+            
+        
+    
+    <!-- end:inject components -->
+
+
+        
+        </div>
+
+        <!-- Page navigation
+        =========================================== -->
+        <div class="col-md-3" role="complementary">
+        <div class="bs-docs-sidebar hidden-print" id="bs-docs-sidebar">
+    
+
+    <ul class="nav bs-docs-sidenav">
+        
+    </ul>
+
+    
+    <!-- start:inject components -->
+    
+    <!-- end:inject components -->
+
+
+
+    <a class="back-to-top" href="#top">
+        <i class="glyphicon glyphicon-chevron-up"></i> Back to top
+    </a>
+</div>
+
+        </div>
+    </div>
+</div>
+
+
+<div id="footer">
+    <div class="container bs-docs-container">
+    <footer class="bs-docs-footer" role="contentinfo">
+    <div class="row">
+        <div class="col-xs-12">
+            <nav aria-label="navigateClasses">
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="http://localhost:8080/wiki/usage/maps">
+                                <span aria-hidden="true">&larr;</span>
+                                <span>Maps and GPS traces</span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li class="next">
+                            <a href="http://localhost:8080/wiki/usage/batch">
+                                <span>Executing batches</span>
+                                <span aria-hidden="true">&rarr;</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="icons">
+    
+    
+        <a href="https://github.com/Protelis/Protelis" class="fa fa-github"></a>
+    
+    
+    </div>
+    <br>
+    <p>
+    Documentation template based on the
+    <a href="https://github.com/mistic100/jekyll-bootstrap-doc">Jekyll Bootstrap Doc</a>
+    Jekyll theme by the <a href="https://getbootstrap.com">Bootstrap team</a>. Site created with
+    <a href="https://orchid.netlify.com">Orchid</a>.
+</p>
+
+<ul class="bs-docs-footer-links muted">
+    <li>Currently 13.0.3-dev18+2bb83c70</li>
+</ul>
+
+</footer>
+    </div>
+</div>
+
+
+<!-- start:inject scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.min.js"></script>
+<script src="http://localhost:8080/BsDoc/447b9123/assets/js/bsdoc.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-kotlin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-java.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-groovy.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-yaml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-asciidoc.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-python.min.js"></script>
+<!-- end:inject scripts -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/1.2.0/trianglify.min.js"></script>
+
+<script>
+    $(function () {
+        window.colors = ['#2299d8', '#000000'];
+                  
+    trianglify({});
+
+        buildNav();
+    });
+</script>
+
+</body>
+</html>

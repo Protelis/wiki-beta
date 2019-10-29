@@ -1,0 +1,584 @@
+{
+  "ownKey": "internal",
+  "childrenPages": {"wiki": {
+    "ownKey": "wiki",
+    "childrenPages": {
+      "examples": {
+        "ownKey": "examples",
+        "childrenPages": {
+          "sac2015p2pplanning": {
+            "ownKey": "sac2015p2pplanning",
+            "ownPages": [{
+              "reference": {
+                "path": "wiki/examples",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "sac2015p2pplanning",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning"
+              },
+              "next": {
+                "path": "wiki/examples",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "sac2015networkmanagement",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/examples/sac2015networkmanagement"
+              },
+              "previous": {
+                "path": "wiki/examples",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "quanticol2016",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/examples/quanticol2016"
+              },
+              "description": "",
+              "title": "[0.1.0] Peer-to-peer route planning",
+              "content": "<p><strong>Note:<\/strong> This example uses an old version of Protelis. As such, the provided code might not work with newer releases.<\/p>\n<h1 id=\"peer-to-peer-route-planning\">Peer-to-peer route planning<\/h1>\n<p>This example has been presented in the paper:<\/p>\n<p><a href=\"https://doi.org/10.1145/2695664.2695913\"><strong>Protelis: Practical Aggregate Programming<\/strong> <em>by Danilo Pianini, Mirko Viroli, Jacob Beal; published in the Proceedings of the 30th Annual ACM Symposium on Applied Computing, April 2015<\/em><\/a><\/p>\n<p>When two people want to meet up at a large event, they may be hampered when a pre-arranged rendezvous point turns out to be inconvenient,\nwhile any centralized services for real-time coordination are overwhelmed by demand.\nPeer-to-peer calculations between participating devices could guide the two friends to meet at an intermediate location,\nregardless of the continued movement of the two friends and participating devices in the area.<\/p>\n<h2 id=\"code-samples-and-illustrations-from-a-simulation\">Code samples and illustrations from a simulation<\/h2>\n<p>Using some of Protelis' special operators and syntax, a small number of functions can be defined and applied to variables.\n<em>Alice<\/em> and <em>Bob<\/em> can be directed toward each other (red dots) through the peer-to-peer calculations performed on participating devices (blue dots).<\/p>\n<p>The function <code>distanceTo<\/code> computes the minimum distance from any device to the nearest <em>source device<\/em> (a device where <code>source<\/code> is <code>true<\/code>).\nThe field <code>d<\/code> is initially <code>Infinity<\/code> everywhere, but is set to <code>0<\/code> on sources and set to the minimum across neighbors of the sum of <code>d<\/code> and the estimated distance to the current device.<\/p>\n<pre><code class=\"language-python\">def distanceTo(source) {\n  rep(d &lt;- Infinity) {\n    mux (source) { 0 }\n    else { minHood(nbr(d) + nbrRange) }\n  }\n}\n<\/code><\/pre>\n<p>The function <code>descend<\/code> follows the gradient of a potential field down from a source.\nGiven an original device (<code>self<\/code>) and a potential potential field,\nthis function builds a path of intermediate devices connecting the original device with the source of the potential field.\nThe original device is marked as part of the path.\nOther devices are identified as being on the path if one of their neighbors is already on the path,\nand they are the closest of that neighbor\u2019s neighbors to the destination.<\/p>\n<pre><code class=\"language-python\">def rendezvous(person1, person2) {\n  descend(person1 == owner, distanceTo(person2) == owner))\n}\n<\/code><\/pre>\n<p>The <code>rendezvous<\/code> function uses the descend function to identify the path between two people, whose devices have been marked with the owner property.<\/p>\n<pre><code class=\"language-python\">def rendezvous(person1, person2) {\n  descend(person1 == owner, distanceTo(person2) == owner))\n}\n<\/code><\/pre>\n<p><img src=\"https://protelis.github.io/wiki-beta/assets/media/images/examples/sac2015p2pplanning/peer-to-peer-1.png\" alt=\"peer-to-peer-1\" /><\/p>\n<p>Imagine an initial configuration where a number of individuals carrying participating devices (blue dots) are attending a large event,\nand two of them (Alice and Bob, as two yellow squares) wish to meet up.<\/p>\n<p><img src=\"https://protelis.github.io/wiki-beta/assets/media/images/examples/sac2015p2pplanning/peer-to-peer-2.png\" alt=\"peer-to-peer-2\" /><\/p>\n<p>Alice and Bob activate their rendezvous application,\nand nearby devices that are on the shortest path between them start to be selected as part of their rendezvous path (red dots).<\/p>\n<p><img src=\"https://protelis.github.io/wiki-beta/assets/media/images/examples/sac2015p2pplanning/peer-to-peer-3.png\" alt=\"peer-to-peer-3\" /><\/p>\n<p>No central information service is needed for peer-to-peer calculation of the shortest path.<\/p>\n<p><img src=\"https://protelis.github.io/wiki-beta/assets/media/images/examples/sac2015p2pplanning/peer-to-peer-4.png\" alt=\"peer-to-peer-4\" /><\/p>\n<p>The complete path is calculated, and will update automatically as Alice and Bob walk toward each other, and as intermediate devices move around.<\/p>\n"
+            }]
+          },
+          "quanticol2016": {
+            "ownKey": "quanticol2016",
+            "ownPages": [{
+              "reference": {
+                "path": "wiki/examples",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "quanticol2016",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/examples/quanticol2016"
+              },
+              "next": {
+                "path": "wiki/examples",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "sac2015p2pplanning",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning"
+              },
+              "previous": {
+                "path": "wiki",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "examples",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/examples"
+              },
+              "description": "",
+              "title": "[13.1.0-dev0d+10aa36bd] Crowd danger estimation and warning",
+              "content": "<p>[13.1.0-dev0d+10aa36bd] Crowd danger estimation and warning<\/p>\n"
+            }]
+          },
+          "sac2015networkmanagement": {
+            "ownKey": "sac2015networkmanagement",
+            "ownPages": [{
+              "reference": {
+                "path": "wiki/examples",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "sac2015networkmanagement",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/examples/sac2015networkmanagement"
+              },
+              "previous": {
+                "path": "wiki/examples",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "sac2015p2pplanning",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning"
+              },
+              "description": "",
+              "title": "[0.1.0] Network services management",
+              "content": "<p><strong>Note:<\/strong> This example uses an old version of Protelis. As such, the provided code might not work with newer releases.<\/p>\n<h1 id=\"network-services-management\">Network services management<\/h1>\n<p>This example has been presented in the paper:<\/p>\n<p><a href=\"https://doi.org/10.1145/2695664.2695913\"><strong>Protelis: Practical Aggregate Programming<\/strong> <em>by Danilo Pianini, Mirko Viroli, Jacob Beal; published in the Proceedings of the 30th Annual ACM Symposium on Applied Computing, April 2015<\/em><\/a><\/p>\n<p>A common problem in managing enterprise services is a failure in one or more services can cause the overall system to get wedged,\ndue to many dependences between different services and server.\nAfter such a failure cascade, the network can only become fully functional by restarting the servers and services in the correct order.\nNetwork services management can coordinate the order of shutdown and restarts.<\/p>\n<p>Using Protelis and the principles of aggregate programming,\nit is straightforward to write a daemon to monitor each service and communicate with other services to execute a coordinated shutdown and restart.\nWe illustrate how dependency-directed coordination can be implemented with very little code.<\/p>\n<p><img src=\"https://protelis.github.io/wiki-beta/assets/media/images/examples/sac2015networkmanagement/dependent-services-network.png\" alt=\"Dependent Service Network\" /><\/p>\n<p>This example scenario features an enterprise network for a small company,\nwith dependencies between two key databases and the internal and external servers running web applications.\nThe scenario was implemented on a network of EmuLab servers,\nwith the services emulated as simple query-response networking programs in Java that entered a \u201chung\u201d state\neither by being externally triggered to crash or after their queries began to consistently fail.<\/p>\n<p>Each service was wrapped with an embedded Protelis execution engine,\nwhich was interfaced with the services by a small piece of monitoring glue code that inserted environment variables\ncontaining an indentifier for the <code>serviceID<\/code> running on that server,\na tuple of identifier for <code>dependencies<\/code>,\nand the current <code>managedServiceStatus<\/code> of <code>stop<\/code>, <code>starting<\/code>, <code>run<\/code>, <code>stopping<\/code>, or <code>hung<\/code>.\nThe glue code also provided <code>stopService<\/code> and <code>startService<\/code> methods to send signals to the service,\ntrack interactions between the services in order to maintain the set of neighbors for Protelis,\nand allowed an external monitoring applications to attach and receive status reports.<\/p>\n<p><img src=\"https://protelis.github.io/wiki-beta/assets/media/images/examples/sac2015networkmanagement/restart.png\" alt=\"Distributed Restart\" /><\/p>\n<p>In this screenshot of the emulated network of services on machines, we see that the supplies database has crashed,\ntriggering a graceful shutdown cascade of dependent services. Upon restart of the supplies database,\nthe rest of the services would automatically restart in the correct order,\nif each service was running the following Protelis network management code.<\/p>\n<p>These variables track the services that should be reachable (<code>nbr_set<\/code>),\nthe services that are needed but are not reachable (<code>nbr_missing<\/code>),\nthe services that are required due to dependencies (<code>nbr_required<\/code>),\nand the nearby services that are down (<code>nbr_down<\/code>).<\/p>\n<pre><code class=\"language-javascript\">let nbr_set = unionHood(nbr([serviceID]));\nlet nbr_missing = dependencies.subtract(nbr_set);\nlet nbr_required = #contains(dependencies, nbr(serviceID));\nlet nbr_down = nbr(managedServiceStatus == &quot;hung&quot; || managedServiceStatus == &quot;stop&quot;);\n<\/code><\/pre>\n<p>The variable <code>problem<\/code> tracks whether this service is currently safe to run.<\/p>\n<pre><code class=\"language-javascript\">let problem = anyHood(nbr_down &amp;&amp; nbr_required) || !nbr_missing.isEmpty();\n<\/code><\/pre>\n<p>This code takes this service down or up, depending on if it is safe to run.<\/p>\n<pre><code class=\"language-javascript\">if(managedServiceStatus == &quot;run&quot; &amp;&amp; problem) {\n  #stopProcess(managedService);\n} else  {\n  if(managedServiceStatus == &quot;stop&quot; &amp;&amp; !problem) {\n    #startProcess(managedService);\n  } else  {\n    managedServiceStatus;\n  }\n}\n<\/code><\/pre>\n"
+            }]
+          }
+        },
+        "ownPages": [{
+          "reference": {
+            "path": "wiki",
+            "baseUrl": "https://protelis.github.io/wiki-beta",
+            "fileName": "examples",
+            "extension": "html",
+            "usePrettyUrl": true,
+            "link": "https://protelis.github.io/wiki-beta/wiki/examples"
+          },
+          "next": {
+            "path": "wiki/examples",
+            "baseUrl": "https://protelis.github.io/wiki-beta",
+            "fileName": "quanticol2016",
+            "extension": "html",
+            "usePrettyUrl": true,
+            "link": "https://protelis.github.io/wiki-beta/wiki/examples/quanticol2016"
+          },
+          "previous": {
+            "path": "wiki/develop",
+            "baseUrl": "https://protelis.github.io/wiki-beta",
+            "fileName": "releases",
+            "extension": "html",
+            "usePrettyUrl": true,
+            "link": "https://protelis.github.io/wiki-beta/wiki/develop/releases"
+          },
+          "description": "",
+          "title": "Examples and demos",
+          "content": "<p>Examples and demos<\/p>\n"
+        }]
+      },
+      "use": {
+        "ownKey": "use",
+        "childrenPages": {
+          "alchemist": {
+            "ownKey": "alchemist",
+            "ownPages": [{
+              "reference": {
+                "path": "wiki/use",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "alchemist",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/use/alchemist"
+              },
+              "next": {
+                "path": "wiki/use",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "demo",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/use/demo"
+              },
+              "previous": {
+                "path": "wiki/use",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "installation",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/use/installation"
+              },
+              "description": "",
+              "title": "Tutorial: simulation with Alchemist",
+              "content": "<h1 id=\"alchemist--protelis\">Alchemist ♥ Protelis<\/h1>\n<p>Alchemist is a simulator for pervasive computing, and supports Protelis since its early releases.\nActually, Protelis was first developed as a module for the simulator, and only in a second development stage it became a language on its own.\nAs a consequence, Alchemist is a good playground for operating with Protelis, it has been used with success in several scientific works.<\/p>\n<h1 id=\"quickstart\">Quickstart<\/h1>\n<p>We provide a <a href=\"https://github.com/AlchemistSimulator/Protelis-Incarnation-tutorial\"><strong>quickstart tutorial<\/strong><\/a> for using Protelis and Alchemist in combination.\nEssentials:<\/p>\n<ul>\n<li>\n<p>Alchemist simulations are defined in <a href=\"https://yaml.org/\">YAML<\/a> files.\nYaml is is a <a href=\"https://learnxinyminutes.com/docs/yaml/\">human friendly and easy to learn<\/a> data serialization standard.<\/p>\n<\/li>\n<li>\n<p>The tutorial relies on <a href=\"https://gradle.org\">Gradle<\/a> to resolve and download dependencies and configure the launch.\nWe recommend to use Gradle also for your project, if you plan to use Alchemist and Protelis in conjunction, the tutorial repository can be a good starting point.\nOther useful resources can be found in the &quot;Examples and demos&quot; section, where several examples use the two tools in together.\nHowever, they might be using a not-so-recent version, so your mileage with copy-paste may vary.<\/p>\n<\/li>\n<\/ul>\n"
+            }]
+          },
+          "worldwind": {
+            "ownKey": "worldwind",
+            "ownPages": [{
+              "reference": {
+                "path": "wiki/use",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "worldwind",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/use/worldwind"
+              },
+              "next": {
+                "path": "wiki",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "develop",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/develop"
+              },
+              "previous": {
+                "path": "wiki/use",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "demo",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/use/demo"
+              },
+              "description": "",
+              "title": "Example: Protelis with NASA WorldWind",
+              "content": "<h1 id=\"protelis-running-on-nasas-worldwind-gis\">Protelis running on NASA's WorldWind GIS<\/h1>\n<p>We provide <a href=\"https://github.com/Protelis/Protelis-Demo-Visualized\">an example<\/a> of Protelis running inside the\n<a href=\"https://github.com/Protelis/Protelis-Demo-Visualized\">NASA's WorldWind GIS/visualization framework<\/a>.<\/p>\n<p><strong>NOTE:<\/strong> the demo needs to get updated, see <a href=\"https://github.com/Protelis/Protelis/issues/190\">Protelis issue #190<\/a><\/p>\n"
+            }]
+          },
+          "installation": {
+            "ownKey": "installation",
+            "ownPages": [{
+              "reference": {
+                "path": "wiki/use",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "installation",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/use/installation"
+              },
+              "next": {
+                "path": "wiki/use",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "alchemist",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/use/alchemist"
+              },
+              "previous": {
+                "path": "wiki",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "use",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/use"
+              },
+              "description": "",
+              "title": "Prerequisites",
+              "content": "<h1 id=\"prerequisites\">Prerequisites<\/h1>\n<p>Protelis is a language hosted on the Java Virtual Machine, as such, it requires the Java JDK, version 8 or above.\nWe recommend using either OpenJDK or OpenJ9 (both are supported), you can find them on <a href=\"https://adoptopenjdk.net/\">the AdoptOpenJDK website<\/a>.<\/p>\n<p>In order to make sure you installed Java correctly, fire up a terminal and type: <code>java -version<\/code>, you should see something like:<\/p>\n<pre><code>java -version\nopenjdk version &quot;1.8.0_222&quot;\nOpenJDK Runtime Environment (build 1.8.0_222-b05)\nOpenJDK 64-Bit Server VM (build 25.222-b05, mixed mode)\n<\/code><\/pre>\n<p>Make sure the version is 1.8 or above.\nIf the version is older than that, please update your Java installation before proceeding.\nYou should also check <code>javac<\/code>, by launching <code>javac -version<\/code>. You should see something similar to:<\/p>\n<pre><code>javac 1.8.0_222\n<\/code><\/pre>\n<p>Once Java is in place, we can start!<\/p>\n<h1 id=\"eclipse-plugin\">Eclipse plugin<\/h1>\n<p>In order to ease the writing of Protelis code, we provide <a href=\"https://marketplace.eclipse.org/content/protelis\">an Eclipse plugin for Protelis<\/a>.\nFour versions are available:<\/p>\n<ul>\n<li>Stable version<\/li>\n<li>Development version (unstable)<\/li>\n<li>Legacy version, with support for Java 7 (abandoned)<\/li>\n<li>Legacy development version, with support for Java 7 (abandoned and unstable)<\/li>\n<\/ul>\n<p>Of course, we recommend the former option, unless you want to develop the language rather than <em>in<\/em> the language.\nThe plugin can be installed by the Eclipse Marketplace directly, by searching for Protelis.<\/p>\n<p>Support for other IDEs is ongoing, at the moment however Protelis script are treated as plain text by most of the IDEs.<\/p>\n"
+            }]
+          },
+          "demo": {
+            "ownKey": "demo",
+            "ownPages": [{
+              "reference": {
+                "path": "wiki/use",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "demo",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/use/demo"
+              },
+              "next": {
+                "path": "wiki/use",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "worldwind",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/use/worldwind"
+              },
+              "previous": {
+                "path": "wiki/use",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "alchemist",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/use/alchemist"
+              },
+              "description": "",
+              "title": "Tutorial: demo projects",
+              "content": "<h1 id=\"protelis-demo-projects\">Protelis Demo projects<\/h1>\n<p>In order to exemplify the use of Protelis in a stand-alone project, <a href=\"https://github.com/Protelis/Protelis-Demo\">we provide a demo application<\/a>.\nThe demo application shows how Protelis can be used in your project, namely, how to invoke Protelis code from Java or Kotlin.<\/p>\n<h2 id=\"importing-protelis-in-your-own-project\">Importing Protelis in your own project<\/h2>\n<p>Protelis is distributed on <a href=\"https://search.maven.org/artifact/org.protelis/protelis/\">Maven Central<\/a>.\nThe best way to import it is through a dependency manager / build system for Java.\nWe warmly recommend Gradle, but Apache Maven, Apache Ivy, Scala SBT, and other tools work as well.\nThe main advantage in using a dependency management system is that it will take care of downloading all transitive dependencies.\nIn fact, Protelis depends on a number of libraries that need to be in your classpath at runtime for the interpreter and parser to work.<\/p>\n<h3 id=\"importing-in-gradle\">Importing in Gradle<\/h3>\n<p>In your dependency section, just import Protelis as:<\/p>\n<pre><code class=\"language-kotlin\">dependencies {\n    implementation(&quot;org.protelis:protelis:13.1.0-dev0d+10aa36bd&quot;)\n}\n<\/code><\/pre>\n<h3 id=\"importing-in-maven\">Importing in Maven<\/h3>\n<p>Include Protelis among your dependencies, with:<\/p>\n<pre><code class=\"language-xml\">&lt;dependency&gt;\n  &lt;groupId&gt;org.protelis&lt;/groupId&gt;\n  &lt;artifactId&gt;protelis&lt;/artifactId&gt;\n  &lt;version&gt;13.1.0-dev0d+10aa36bd&lt;/version&gt;\n&lt;/dependency&gt;\n<\/code><\/pre>\n<h3 id=\"importing-in-scala-sbt\">Importing in Scala SBT<\/h3>\n<p>Declare Protelis as a dependency by:<\/p>\n<pre><code class=\"language-scala\">libraryDependencies += &quot;org.protelis&quot; % &quot;protelis&quot; % &quot;13.1.0-dev0d+10aa36bd&quot;\n<\/code><\/pre>\n<h3 id=\"importing-manually\">Importing manually<\/h3>\n<p>If you really cannot use a dependency manager, you can still import Protelis in your project &quot;the old way&quot;,\nby importing the Protelis &quot;Fat Jar&quot; in your classpath.\nThis mechanism is way more fragile than going through a dependency manager however\n(for instance, different versions of a library may get in the classpath, and,\ndepending on the order in which classes are loaded, the system may or may not work as expected).\nYou can obtain the latest fatjar in <a href=\"https://github.com/Protelis/Protelis/releases/latest\">the Protelis release page on GitHub<\/a>.<\/p>\n"
+            }]
+          }
+        },
+        "ownPages": [{
+          "reference": {
+            "path": "wiki",
+            "baseUrl": "https://protelis.github.io/wiki-beta",
+            "fileName": "use",
+            "extension": "html",
+            "usePrettyUrl": true,
+            "link": "https://protelis.github.io/wiki-beta/wiki/use"
+          },
+          "next": {
+            "path": "wiki/use",
+            "baseUrl": "https://protelis.github.io/wiki-beta",
+            "fileName": "installation",
+            "extension": "html",
+            "usePrettyUrl": true,
+            "link": "https://protelis.github.io/wiki-beta/wiki/use/installation"
+          },
+          "previous": {
+            "path": "wiki/understand",
+            "baseUrl": "https://protelis.github.io/wiki-beta",
+            "fileName": "syntax",
+            "extension": "html",
+            "usePrettyUrl": true,
+            "link": "https://protelis.github.io/wiki-beta/wiki/understand/syntax"
+          },
+          "description": "",
+          "title": "Use",
+          "content": "<p>Use<\/p>\n"
+        }]
+      },
+      "understand": {
+        "ownKey": "understand",
+        "childrenPages": {
+          "basics": {
+            "ownKey": "basics",
+            "ownPages": [{
+              "reference": {
+                "path": "wiki/understand",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "basics",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/understand/basics"
+              },
+              "next": {
+                "path": "wiki/understand",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "architecture",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/understand/architecture"
+              },
+              "previous": {
+                "path": "wiki",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "understand",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/understand"
+              },
+              "description": "",
+              "title": "Aggregate programming basics",
+              "content": ""
+            }]
+          },
+          "syntax": {
+            "ownKey": "syntax",
+            "ownPages": [
+              {
+                "reference": {
+                  "path": "wiki/understand",
+                  "baseUrl": "https://protelis.github.io/wiki-beta",
+                  "fileName": "syntax",
+                  "extension": "html",
+                  "usePrettyUrl": true,
+                  "link": "https://protelis.github.io/wiki-beta/wiki/understand/syntax"
+                },
+                "next": {
+                  "path": "wiki/understand",
+                  "baseUrl": "https://protelis.github.io/wiki-beta",
+                  "fileName": "syntax",
+                  "extension": "html",
+                  "usePrettyUrl": true,
+                  "link": "https://protelis.github.io/wiki-beta/wiki/understand/syntax"
+                },
+                "previous": {
+                  "path": "wiki/understand",
+                  "baseUrl": "https://protelis.github.io/wiki-beta",
+                  "fileName": "architecture",
+                  "extension": "html",
+                  "usePrettyUrl": true,
+                  "link": "https://protelis.github.io/wiki-beta/wiki/understand/architecture"
+                },
+                "description": "",
+                "title": "Syntax",
+                "content": "<p>Syntax<\/p>\n"
+              },
+              {
+                "reference": {
+                  "path": "wiki/understand",
+                  "baseUrl": "https://protelis.github.io/wiki-beta",
+                  "fileName": "syntax",
+                  "extension": "html",
+                  "usePrettyUrl": true,
+                  "link": "https://protelis.github.io/wiki-beta/wiki/understand/syntax"
+                },
+                "next": {
+                  "path": "wiki",
+                  "baseUrl": "https://protelis.github.io/wiki-beta",
+                  "fileName": "use",
+                  "extension": "html",
+                  "usePrettyUrl": true,
+                  "link": "https://protelis.github.io/wiki-beta/wiki/use"
+                },
+                "previous": {
+                  "path": "wiki/understand",
+                  "baseUrl": "https://protelis.github.io/wiki-beta",
+                  "fileName": "syntax",
+                  "extension": "html",
+                  "usePrettyUrl": true,
+                  "link": "https://protelis.github.io/wiki-beta/wiki/understand/syntax"
+                },
+                "description": "",
+                "title": "Upgrade guide",
+                "content": "<p>Upgrade guide<\/p>\n"
+              }
+            ]
+          },
+          "architecture": {
+            "ownKey": "architecture",
+            "ownPages": [{
+              "reference": {
+                "path": "wiki/understand",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "architecture",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/understand/architecture"
+              },
+              "next": {
+                "path": "wiki/understand",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "syntax",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/understand/syntax"
+              },
+              "previous": {
+                "path": "wiki/understand",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "basics",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/understand/basics"
+              },
+              "description": "",
+              "title": "Protelis' architecture",
+              "content": "<p>Protelis' architecture<\/p>\n"
+            }]
+          }
+        },
+        "ownPages": [{
+          "reference": {
+            "path": "wiki",
+            "baseUrl": "https://protelis.github.io/wiki-beta",
+            "fileName": "understand",
+            "extension": "html",
+            "usePrettyUrl": true,
+            "link": "https://protelis.github.io/wiki-beta/wiki/understand"
+          },
+          "next": {
+            "path": "wiki/understand",
+            "baseUrl": "https://protelis.github.io/wiki-beta",
+            "fileName": "basics",
+            "extension": "html",
+            "usePrettyUrl": true,
+            "link": "https://protelis.github.io/wiki-beta/wiki/understand/basics"
+          },
+          "description": "",
+          "title": "Understand",
+          "content": "<p>Understand<\/p>\n"
+        }]
+      },
+      "develop": {
+        "ownKey": "develop",
+        "childrenPages": {
+          "structure": {
+            "ownKey": "structure",
+            "ownPages": [{
+              "reference": {
+                "path": "wiki/develop",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "structure",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/develop/structure"
+              },
+              "next": {
+                "path": "wiki/develop",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "releases",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/develop/releases"
+              },
+              "previous": {
+                "path": "wiki",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "develop",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/develop"
+              },
+              "description": "",
+              "title": "Project structure",
+              "content": "<p>Project structure<\/p>\n"
+            }]
+          },
+          "releases": {
+            "ownKey": "releases",
+            "ownPages": [{
+              "reference": {
+                "path": "wiki/develop",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "releases",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/develop/releases"
+              },
+              "next": {
+                "path": "wiki",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "examples",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/examples"
+              },
+              "previous": {
+                "path": "wiki/develop",
+                "baseUrl": "https://protelis.github.io/wiki-beta",
+                "fileName": "structure",
+                "extension": "html",
+                "usePrettyUrl": true,
+                "link": "https://protelis.github.io/wiki-beta/wiki/develop/structure"
+              },
+              "description": "",
+              "title": "Creating Releases",
+              "content": "<p>Creating Releases<\/p>\n"
+            }]
+          }
+        },
+        "ownPages": [{
+          "reference": {
+            "path": "wiki",
+            "baseUrl": "https://protelis.github.io/wiki-beta",
+            "fileName": "develop",
+            "extension": "html",
+            "usePrettyUrl": true,
+            "link": "https://protelis.github.io/wiki-beta/wiki/develop"
+          },
+          "next": {
+            "path": "wiki/develop",
+            "baseUrl": "https://protelis.github.io/wiki-beta",
+            "fileName": "structure",
+            "extension": "html",
+            "usePrettyUrl": true,
+            "link": "https://protelis.github.io/wiki-beta/wiki/develop/structure"
+          },
+          "previous": {
+            "path": "wiki/use",
+            "baseUrl": "https://protelis.github.io/wiki-beta",
+            "fileName": "worldwind",
+            "extension": "html",
+            "usePrettyUrl": true,
+            "link": "https://protelis.github.io/wiki-beta/wiki/use/worldwind"
+          },
+          "description": "",
+          "title": "Develop",
+          "content": "<p>Develop<\/p>\n"
+        }]
+      }
+    },
+    "ownPages": [{
+      "reference": {
+        "path": "",
+        "baseUrl": "https://protelis.github.io/wiki-beta",
+        "fileName": "wiki",
+        "extension": "html",
+        "usePrettyUrl": true,
+        "link": "https://protelis.github.io/wiki-beta/wiki"
+      },
+      "description": "",
+      "title": "Wiki",
+      "content": "<html>\n <head><\/head>\n <body>\n  <h1 id=\"alchemist-simulator-user-guide\">Alchemist simulator user guide<\/h1> \n  <ul> \n   <li><a href=\"https://protelis.github.io/wiki-beta/wiki/understand\">Understand<\/a> \n    <ul> \n     <li><a href=\"https://protelis.github.io/wiki-beta/wiki/understand/basics\">Aggregate programming basics<\/a><\/li> \n     <li><a href=\"https://protelis.github.io/wiki-beta/wiki/understand/architecture\">Protelis' architecture<\/a><\/li> \n     <li><a href=\"https://protelis.github.io/wiki-beta/wiki/understand/syntax\">Syntax<\/a><\/li> \n     <li><a href=\"https://protelis.github.io/wiki-beta/wiki/understand/syntax\">Upgrade guide<\/a><\/li> \n    <\/ul> <\/li> \n   <li><a href=\"https://protelis.github.io/wiki-beta/wiki/use\">Use<\/a> \n    <ul> \n     <li><a href=\"https://protelis.github.io/wiki-beta/wiki/use/installation\">Prerequisites<\/a><\/li> \n     <li><a href=\"https://protelis.github.io/wiki-beta/wiki/use/alchemist\">Tutorial: simulation with Alchemist<\/a><\/li> \n     <li><a href=\"https://protelis.github.io/wiki-beta/wiki/use/demo\">Tutorial: demo projects<\/a><\/li> \n     <li><a href=\"https://protelis.github.io/wiki-beta/wiki/use/worldwind\">Example: Protelis with NASA WorldWind<\/a><\/li> \n    <\/ul> <\/li> \n   <li><a href=\"https://protelis.github.io/wiki-beta/wiki/develop\">Develop<\/a> \n    <ul> \n     <li><a href=\"https://protelis.github.io/wiki-beta/wiki/develop/structure\">Project structure<\/a><\/li> \n     <li><a href=\"https://protelis.github.io/wiki-beta/wiki/develop/releases\">Creating Releases<\/a><\/li> \n    <\/ul> <\/li> \n   <li><a href=\"https://protelis.github.io/wiki-beta/wiki/examples\">Examples and demos<\/a> \n    <ul> \n     <li><a href=\"https://protelis.github.io/wiki-beta/wiki/examples/quanticol2016\">[13.1.0-dev0d+10aa36bd] Crowd danger estimation and warning<\/a><\/li> \n     <li><a href=\"https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning\">[0.1.0] Peer-to-peer route planning<\/a><\/li> \n     <li><a href=\"https://protelis.github.io/wiki-beta/wiki/examples/sac2015networkmanagement\">[0.1.0] Network services management<\/a><\/li> \n    <\/ul> <\/li> \n  <\/ul> \n <\/body>\n<\/html>\n"
+    }]
+  }},
+  "ownPages": [
+    {
+      "reference": {
+        "path": "",
+        "baseUrl": "https://protelis.github.io/wiki-beta",
+        "fileName": "",
+        "extension": "html",
+        "usePrettyUrl": true,
+        "link": "https://protelis.github.io/wiki-beta"
+      },
+      "description": "",
+      "title": "Protelis: aggregate programming",
+      "content": "<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/apple-touch-icon.png\">\n<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/favicon-32x32.png\">\n<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/favicon-16x16.png\">\n<link rel=\"manifest\" href=\"/site.webmanifest\">\n<link rel=\"mask-icon\" href=\"/safari-pinned-tab.svg\" color=\"#5bbad5\">\n<meta name=\"msapplication-TileColor\" content=\"#00aba9\">\n<meta name=\"theme-color\" content=\"#ffffff\">\n<h1 id=\"protelis-logo-why-protelis-what-is-it\"><img src=\"https://protelis.github.io/wiki-beta/assets/media/images/logo_scale-0.08.png\" alt=\"Protelis Logo\" /> Why Protelis? What is it?<\/h1>\n<p>Protelis is a programming language designed for people who want to get resilient collective behavior from a complex network of heterogeneous machines.\nProtelis leverages <em>aggregate programming<\/em> for applications like the Internet of Things or flocking robots.\nIt lets you think about what you want the collection of machines to accomplish, rather than what you need each individual machine to do.<\/p>\n<p>The goal of the Protelis language is to make it easier to build a resilient and well-behaved networked system out of an assortment of different potentially mobile devices.\nProtelis is designed for the paradigm of &quot;aggregate programming&quot;,\na way of thinking about and decomposing problems that can be solved with a network of distributed sensors and computers.\nAggregate programming tries to produce reliable and robust collective behavior from uncoordinated local interactions between machines.\nThat's hard to do, but Protelis helps!<\/p>\n<p><img src=\"https://protelis.github.io/wiki-beta/assets/media/images/overview.png\" alt=\"Protelis Logo\" /><\/p>\n<h1 id=\"what-is-it-not\">What is it <strong>not<\/strong>?<\/h1>\n<h3 id=\"not-an-agent-based-modeling-framework\"><strong>Not<\/strong> an agent-based modeling framework<\/h3>\n<p>Although agent-based modeling (ABM) and aggregate programming both concern phenomena that occur when many individuals interact, they approach these phenomena in different ways.\nIn ABM, you usually specify an individual\u2019s behavior and interaction rules, and then simulate a collection of individuals to see what large-scale phenomena occur.\nIn aggregate programming, you specify the desired collective action, which is then transformed into a distributed implementation for individual machines.<\/p>\n<h3 id=\"not-a-simulation-platform\"><strong>Not<\/strong> a simulation platform<\/h3>\n<p>Protelis is a programming language which can be used <em>within<\/em> simulation frameworks, but that per-se ships no simulation platform.\nOne of the nice things you get out of it is that, if the simulation implementation respects the reference,\nthe code written for a simulation can be reused as-is inside a deployed system.<\/p>\n<h1 id=\"who-uses-it-the-protelis-community\">Who uses it? The Protelis community<\/h1>\n<h3 id=\"alma-mater-studiorumuniversità-di-bologna-italy\">Alma Mater Studiorum\u2014Università di Bologna (Italy)<\/h3>\n<p>Protelis is used in a variety of experiments and demos by the research group led by <a href=\"https://www.unibo.it/sitoweb/mirko.viroli/en\">prof. Mirko Viroli<\/a>.\nThe team includes <a href=\"https://www.unibo.it/sitoweb/danilo.pianini/en\">Danilo Pianini<\/a>, chief architect and main developer of Protelis,\nand <a href=\"https://www.unibo.it/sitoweb/roby.casadei/en\">Roberto Casadei<\/a>, lead developer of <a href=\"https://scafi.github.io/\">Scafi<\/a>,\na Scala internal DSL for aggregate programming.<\/p>\n<h3 id=\"raytheon-bbn-technologies-usa\">Raytheon BBN Technologies (USA)<\/h3>\n<ul>\n<li><a href=\"https://jakebeal.github.io/\">Jacob Beal<\/a><\/li>\n<li><a href=\"https://scholar.google.com/citations?user=oBq3jv0AAAAJ&amp;hl=en\">Shane Clark<\/a><\/li>\n<li><a href=\"http://kyle.usbeck.us/\">Kyle Usbeck<\/a><\/li>\n<\/ul>\n<h3 id=\"università-di-torino-italy\">Università di Torino (Italy)<\/h3>\n<ul>\n<li><a href=\"http://www.di.unito.it/~damiani/\">Ferruccio Damiani<\/a><\/li>\n<li><a href=\"http://giorgio.audrito.info/#!/research\">Giorgio Audrito<\/a><\/li>\n<\/ul>\n<h3 id=\"fondazione-bruno-kessler-italy\">Fondazione Bruno Kessler (Italy)<\/h3>\n<ul>\n<li><a href=\"https://das.fbk.eu/people/profile/bucchiarone\">Antonio Bucchiarone<\/a><\/li>\n<\/ul>\n"
+    },
+    {
+      "reference": {
+        "path": "",
+        "baseUrl": "https://protelis.github.io/wiki-beta",
+        "fileName": "404",
+        "extension": "html",
+        "usePrettyUrl": false,
+        "link": "https://protelis.github.io/wiki-beta/404.html"
+      },
+      "description": "",
+      "title": "Protelis: aggregate programming",
+      "content": ""
+    }
+  ]
+}

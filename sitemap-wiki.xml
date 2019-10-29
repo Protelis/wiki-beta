@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://protelis.github.io/wiki-beta/wiki</loc>
+        <lastmod>2019-10-29</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://protelis.github.io/wiki-beta/wiki/understand</loc>
+        <lastmod>2019-10-29</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://protelis.github.io/wiki-beta/wiki/understand/basics</loc>
+        <lastmod>2019-10-29</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://protelis.github.io/wiki-beta/wiki/understand/architecture</loc>
+        <lastmod>2019-10-29</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://protelis.github.io/wiki-beta/wiki/understand/syntax</loc>
+        <lastmod>2019-10-29</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://protelis.github.io/wiki-beta/wiki/understand/syntax</loc>
+        <lastmod>2019-10-29</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://protelis.github.io/wiki-beta/wiki/use</loc>
+        <lastmod>2019-10-29</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://protelis.github.io/wiki-beta/wiki/use/installation</loc>
+        <lastmod>2019-10-29</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://protelis.github.io/wiki-beta/wiki/use/alchemist</loc>
+        <lastmod>2019-10-29</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://protelis.github.io/wiki-beta/wiki/use/demo</loc>
+        <lastmod>2019-10-29</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://protelis.github.io/wiki-beta/wiki/use/worldwind</loc>
+        <lastmod>2019-10-29</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://protelis.github.io/wiki-beta/wiki/develop</loc>
+        <lastmod>2019-10-29</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://protelis.github.io/wiki-beta/wiki/develop/structure</loc>
+        <lastmod>2019-10-29</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://protelis.github.io/wiki-beta/wiki/develop/releases</loc>
+        <lastmod>2019-10-29</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://protelis.github.io/wiki-beta/wiki/examples</loc>
+        <lastmod>2019-10-29</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://protelis.github.io/wiki-beta/wiki/examples/quanticol2016</loc>
+        <lastmod>2019-10-29</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning</loc>
+        <lastmod>2019-10-29</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://protelis.github.io/wiki-beta/wiki/examples/sac2015networkmanagement</loc>
+        <lastmod>2019-10-29</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    
+</urlset>

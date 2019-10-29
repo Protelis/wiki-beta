@@ -9,24 +9,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 <meta name="generator" content="Orchid 0.17.6"/>
-<link rel="icon" href="https://protelis.github.io/wiki-beta/favicon.ico">
+<link rel="icon" href="http://localhost:8080/favicon.ico">
 
 
 <meta name="robots" content="index, follow">
 
 
 
-<title>Protelis: aggregate programming</title>
+<title>[13.1.0-dev0c+1e666fd1] P2P routing and distribution of software updates</title>
 
 
 <meta name="description" content="Practical language for aggregate programming.">
 
 
 
+<link rel="prev" href="http://localhost:8080/wiki/examples">
+
+
+<link rel="next" href="http://localhost:8080/wiki/examples/quanticol2016">
 
 
 <script>
-    window.site = {"orchidVersion":"0.17.6","baseUrl":"https://protelis.github.io/wiki-beta","environment":"debug","version":"13.1.0-dev0d+10aa36bd"};
+    window.site = {"orchidVersion":"0.17.6","baseUrl":"http://localhost:8080","environment":"debug","version":"13.1.0-dev0c+1e666fd1"};
 </script>
 
 
@@ -40,20 +44,20 @@
 <!-- Class: com.eden.orchid.bsdoc.BSDocTheme -->
 
 <!-- PAGE -->
-<!-- Type: frontPage -->
-<!-- Class: com.eden.orchid.api.theme.pages.OrchidPage -->
+<!-- Type: wiki -->
+<!-- Class: com.eden.orchid.wiki.pages.WikiPage -->
 <!-- Layout: index -->
 <!-- Resolved Layout: templates/layouts/index.peb -->
-<!-- Page Template: frontPage, page -->
+<!-- Page Template: wiki, page -->
 <!-- Resolved Page Template:  -->
 
 <!-- RESOURCE -->
-<!-- Class: com.eden.orchid.api.resources.resource.FileResource -->
-<!-- Source Filename: homepage.md -->
+<!-- Class: com.eden.orchid.api.resources.resource.StringResource -->
+<!-- Source Filename: wiki/examples/ieeecomputer2015/index.md -->
 
 <!-- COMPLETE PAGE CONFIGURATION -->
 <script>
-    window.allData = {"reference":{"path":"","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta"},"description":"","title":"Protelis: aggregate programming"};
+    window.allData = {"reference":{"path":"wiki/examples","baseUrl":"http://localhost:8080","fileName":"ieeecomputer2015","extension":"html","usePrettyUrl":true,"link":"http://localhost:8080/wiki/examples/ieeecomputer2015"},"next":{"path":"wiki/examples","baseUrl":"http://localhost:8080","fileName":"quanticol2016","extension":"html","usePrettyUrl":true,"link":"http://localhost:8080/wiki/examples/quanticol2016"},"previous":{"path":"wiki","baseUrl":"http://localhost:8080","fileName":"examples","extension":"html","usePrettyUrl":true,"link":"http://localhost:8080/wiki/examples"},"description":"","title":"[13.1.0-dev0c+1e666fd1] P2P routing and distribution of software updates"};
 </script>
 
 <!-- end:debug info -->
@@ -64,8 +68,8 @@
 <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css" />
-<link rel="stylesheet" type="text/css" href="https://protelis.github.io/wiki-beta/BsDoc/5d2166d8/assets/css/bsdoc.css" />
-<link rel="stylesheet" type="text/css" href="https://protelis.github.io/wiki-beta/assets/css/pygments.css" />
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/BsDoc/5d2166d8/assets/css/bsdoc.css" />
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/assets/css/pygments.css" />
 <link rel="stylesheet" type="text/css" href="https://rawgit.com/PrismJS/prism-themes/master/themes/prism-ghcolors.css" />
 <!-- end:inject styles -->
 
@@ -90,13 +94,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="https://protelis.github.io/wiki-beta">Protelis: aggregate programming</a>
+            <a class="navbar-brand" href="http://localhost:8080">Protelis: aggregate programming</a>
         </div>
         <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
             <ul class="nav navbar-nav navbar-right">
                 
                     
-                        <li><a href="https://protelis.github.io/wiki-beta">Home</a></li>
+                        <li><a href="http://localhost:8080">Home</a></li>
                     
                 
                     
@@ -104,11 +108,11 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Understand<span class="caret"></span></a>
                             <ul class="dropdown-menu scrollable-menu">
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/understand/basics">Aggregate programming basics</a></li>
+                                    <li><a href="http://localhost:8080/wiki/understand/basics">Aggregate programming basics</a></li>
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/understand/architecture">Protelis&#39; architecture</a></li>
+                                    <li><a href="http://localhost:8080/wiki/understand/architecture">Protelis&#39; architecture</a></li>
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/understand/syntax">Upgrade guide</a></li>
+                                    <li><a href="http://localhost:8080/wiki/understand/syntax">Upgrade guide</a></li>
                                 
                             </ul>
                         </li>
@@ -119,13 +123,13 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Use<span class="caret"></span></a>
                             <ul class="dropdown-menu scrollable-menu">
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/use/installation">Prerequisites</a></li>
+                                    <li><a href="http://localhost:8080/wiki/use/installation">Prerequisites</a></li>
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/use/alchemist">Tutorial: simulation with Alchemist</a></li>
+                                    <li><a href="http://localhost:8080/wiki/use/alchemist">Tutorial: simulation with Alchemist</a></li>
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/use/demo">Tutorial: demo projects</a></li>
+                                    <li><a href="http://localhost:8080/wiki/use/demo">Tutorial: demo projects</a></li>
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/use/worldwind">Example: Protelis with NASA WorldWind</a></li>
+                                    <li><a href="http://localhost:8080/wiki/use/worldwind">Example: Protelis with NASA WorldWind</a></li>
                                 
                             </ul>
                         </li>
@@ -136,9 +140,9 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Develop<span class="caret"></span></a>
                             <ul class="dropdown-menu scrollable-menu">
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/develop/structure">Project structure</a></li>
+                                    <li><a href="http://localhost:8080/wiki/develop/structure">Project structure</a></li>
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/develop/releases">Creating Releases</a></li>
+                                    <li><a href="http://localhost:8080/wiki/develop/releases">Creating Releases</a></li>
                                 
                             </ul>
                         </li>
@@ -149,11 +153,11 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Examples and demos<span class="caret"></span></a>
                             <ul class="dropdown-menu scrollable-menu">
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/quanticol2016">[13.1.0-dev0d+10aa36bd] Crowd danger estimation and warning</a></li>
+                                    <li><a href="http://localhost:8080/wiki/examples/ieeecomputer2015">[13.1.0-dev0c+1e666fd1] P2P routing and distribution of software updates</a></li>
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning">[0.1.0] Peer-to-peer route planning</a></li>
+                                    <li><a href="http://localhost:8080/wiki/examples/quanticol2016">[5.0.0] Crowd danger estimation and warning</a></li>
                                 
-                                    <li><a href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015networkmanagement">[0.1.0] Network services management</a></li>
+                                    <li><a href="http://localhost:8080/wiki/examples/sac2015networkmanagement">[0.1.0] Network services management</a></li>
                                 
                             </ul>
                         </li>
@@ -170,7 +174,7 @@
 
     <div class="bs-docs-masthead" id="jumbotron">
         <div class="container">
-            <h1 class="home-title">Protelis: aggregate programming</h1>
+            <h1 class="home-title">[13.1.0-dev0c+1e666fd1] P2P routing and distribution of software updates</h1>
         </div>
     </div>
 
@@ -182,7 +186,11 @@
     <ul class="breadcrumb">
     
     
-        <li class="breadcrumb-item active" aria-current="page">Protelis: aggregate programming</li>
+        <li class="breadcrumb-item"><a href="http://localhost:8080/wiki">Wiki</a></li>
+    
+    
+    
+        <li class="breadcrumb-item active" aria-current="page">[13.1.0-dev0c+1e666fd1] P2P routing and distribution of software updates</li>
     
     
     </ul>
@@ -198,53 +206,7 @@
             
                 
                     
-                        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#00aba9">
-<meta name="theme-color" content="#ffffff">
-<h1 id="protelis-logo-why-protelis-what-is-it"><img src="https://protelis.github.io/wiki-beta/assets/media/images/logo_scale-0.08.png" alt="Protelis Logo" /> Why Protelis? What is it?</h1>
-<p>Protelis is a programming language designed for people who want to get resilient collective behavior from a complex network of heterogeneous machines.
-Protelis leverages <em>aggregate programming</em> for applications like the Internet of Things or flocking robots.
-It lets you think about what you want the collection of machines to accomplish, rather than what you need each individual machine to do.</p>
-<p>The goal of the Protelis language is to make it easier to build a resilient and well-behaved networked system out of an assortment of different potentially mobile devices.
-Protelis is designed for the paradigm of &quot;aggregate programming&quot;,
-a way of thinking about and decomposing problems that can be solved with a network of distributed sensors and computers.
-Aggregate programming tries to produce reliable and robust collective behavior from uncoordinated local interactions between machines.
-That's hard to do, but Protelis helps!</p>
-<p><img src="https://protelis.github.io/wiki-beta/assets/media/images/overview.png" alt="Protelis Logo" /></p>
-<h1 id="what-is-it-not">What is it <strong>not</strong>?</h1>
-<h3 id="not-an-agent-based-modeling-framework"><strong>Not</strong> an agent-based modeling framework</h3>
-<p>Although agent-based modeling (ABM) and aggregate programming both concern phenomena that occur when many individuals interact, they approach these phenomena in different ways.
-In ABM, you usually specify an individual’s behavior and interaction rules, and then simulate a collection of individuals to see what large-scale phenomena occur.
-In aggregate programming, you specify the desired collective action, which is then transformed into a distributed implementation for individual machines.</p>
-<h3 id="not-a-simulation-platform"><strong>Not</strong> a simulation platform</h3>
-<p>Protelis is a programming language which can be used <em>within</em> simulation frameworks, but that per-se ships no simulation platform.
-One of the nice things you get out of it is that, if the simulation implementation respects the reference,
-the code written for a simulation can be reused as-is inside a deployed system.</p>
-<h1 id="who-uses-it-the-protelis-community">Who uses it? The Protelis community</h1>
-<h3 id="alma-mater-studiorumuniversità-di-bologna-italy">Alma Mater Studiorum—Università di Bologna (Italy)</h3>
-<p>Protelis is used in a variety of experiments and demos by the research group led by <a href="https://www.unibo.it/sitoweb/mirko.viroli/en">prof. Mirko Viroli</a>.
-The team includes <a href="https://www.unibo.it/sitoweb/danilo.pianini/en">Danilo Pianini</a>, chief architect and main developer of Protelis,
-and <a href="https://www.unibo.it/sitoweb/roby.casadei/en">Roberto Casadei</a>, lead developer of <a href="https://scafi.github.io/">Scafi</a>,
-a Scala internal DSL for aggregate programming.</p>
-<h3 id="raytheon-bbn-technologies-usa">Raytheon BBN Technologies (USA)</h3>
-<ul>
-<li><a href="https://jakebeal.github.io/">Jacob Beal</a></li>
-<li><a href="https://scholar.google.com/citations?user=oBq3jv0AAAAJ&amp;hl=en">Shane Clark</a></li>
-<li><a href="http://kyle.usbeck.us/">Kyle Usbeck</a></li>
-</ul>
-<h3 id="università-di-torino-italy">Università di Torino (Italy)</h3>
-<ul>
-<li><a href="http://www.di.unito.it/~damiani/">Ferruccio Damiani</a></li>
-<li><a href="http://giorgio.audrito.info/#!/research">Giorgio Audrito</a></li>
-</ul>
-<h3 id="fondazione-bruno-kessler-italy">Fondazione Bruno Kessler (Italy)</h3>
-<ul>
-<li><a href="https://das.fbk.eu/people/profile/bucchiarone">Antonio Bucchiarone</a></li>
-</ul>
+                        <p>[13.1.0-dev0c+1e666fd1] P2P routing and distribution of software updates</p>
 
                     
                 
@@ -294,7 +256,21 @@ a Scala internal DSL for aggregate programming.</p>
             <nav aria-label="navigateClasses">
                 <ul class="pager">
                     
+                        <li class="previous">
+                            <a href="http://localhost:8080/wiki/examples">
+                                <span aria-hidden="true">&larr;</span>
+                                <span>Examples and demos</span>
+                            </a>
+                        </li>
+                    
 
+                    
+                        <li class="next">
+                            <a href="http://localhost:8080/wiki/examples/quanticol2016">
+                                <span>[5.0.0] Crowd danger estimation and warning</span>
+                                <span aria-hidden="true">&rarr;</span>
+                            </a>
+                        </li>
                     
                 </ul>
             </nav>
@@ -316,7 +292,7 @@ a Scala internal DSL for aggregate programming.</p>
 </p>
 
 <ul class="bs-docs-footer-links muted">
-    <li>Currently 13.1.0-dev0d+10aa36bd</li>
+    <li>Currently 13.1.0-dev0c+1e666fd1</li>
 </ul>
 
 </footer>
@@ -328,7 +304,7 @@ a Scala internal DSL for aggregate programming.</p>
 <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script  src="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script  src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.min.js"></script>
-<script  src="https://protelis.github.io/wiki-beta/BsDoc/5d2166d8/assets/js/bsdoc.js"></script>
+<script  src="http://localhost:8080/BsDoc/5d2166d8/assets/js/bsdoc.js"></script>
 <script  src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/prism.min.js"></script>
 <script  src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-kotlin.min.js"></script>
 <script  src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-java.min.js"></script>

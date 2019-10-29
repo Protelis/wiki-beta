@@ -16,12 +16,14 @@
 
 
 
-<title>Protelis: aggregate programming</title>
+<title>[0.1.0] Network services management</title>
 
 
 <meta name="description" content="Practical language for aggregate programming.">
 
 
+
+<link rel="prev" href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning">
 
 
 
@@ -40,20 +42,20 @@
 <!-- Class: com.eden.orchid.bsdoc.BSDocTheme -->
 
 <!-- PAGE -->
-<!-- Type: frontPage -->
-<!-- Class: com.eden.orchid.api.theme.pages.OrchidPage -->
+<!-- Type: wiki -->
+<!-- Class: com.eden.orchid.wiki.pages.WikiPage -->
 <!-- Layout: index -->
 <!-- Resolved Layout: templates/layouts/index.peb -->
-<!-- Page Template: frontPage, page -->
+<!-- Page Template: wiki, page -->
 <!-- Resolved Page Template:  -->
 
 <!-- RESOURCE -->
 <!-- Class: com.eden.orchid.api.resources.resource.FileResource -->
-<!-- Source Filename: homepage.md -->
+<!-- Source Filename: wiki/examples/sac2015networkmanagement.md -->
 
 <!-- COMPLETE PAGE CONFIGURATION -->
 <script>
-    window.allData = {"reference":{"path":"","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta"},"description":"","title":"Protelis: aggregate programming"};
+    window.allData = {"reference":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"sac2015networkmanagement","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/sac2015networkmanagement"},"previous":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"sac2015p2pplanning","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning"},"description":"","title":"[0.1.0] Network services management"};
 </script>
 
 <!-- end:debug info -->
@@ -170,7 +172,7 @@
 
     <div class="bs-docs-masthead" id="jumbotron">
         <div class="container">
-            <h1 class="home-title">Protelis: aggregate programming</h1>
+            <h1 class="home-title">[0.1.0] Network services management</h1>
         </div>
     </div>
 
@@ -182,7 +184,11 @@
     <ul class="breadcrumb">
     
     
-        <li class="breadcrumb-item active" aria-current="page">Protelis: aggregate programming</li>
+        <li class="breadcrumb-item"><a href="https://protelis.github.io/wiki-beta/wiki">Wiki</a></li>
+    
+    
+    
+        <li class="breadcrumb-item active" aria-current="page">[0.1.0] Network services management</li>
     
     
     </ul>
@@ -198,53 +204,59 @@
             
                 
                     
-                        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#00aba9">
-<meta name="theme-color" content="#ffffff">
-<h1 id="protelis-logo-why-protelis-what-is-it"><img src="https://protelis.github.io/wiki-beta/assets/media/images/logo_scale-0.08.png" alt="Protelis Logo" /> Why Protelis? What is it?</h1>
-<p>Protelis is a programming language designed for people who want to get resilient collective behavior from a complex network of heterogeneous machines.
-Protelis leverages <em>aggregate programming</em> for applications like the Internet of Things or flocking robots.
-It lets you think about what you want the collection of machines to accomplish, rather than what you need each individual machine to do.</p>
-<p>The goal of the Protelis language is to make it easier to build a resilient and well-behaved networked system out of an assortment of different potentially mobile devices.
-Protelis is designed for the paradigm of &quot;aggregate programming&quot;,
-a way of thinking about and decomposing problems that can be solved with a network of distributed sensors and computers.
-Aggregate programming tries to produce reliable and robust collective behavior from uncoordinated local interactions between machines.
-That's hard to do, but Protelis helps!</p>
-<p><img src="https://protelis.github.io/wiki-beta/assets/media/images/overview.png" alt="Protelis Logo" /></p>
-<h1 id="what-is-it-not">What is it <strong>not</strong>?</h1>
-<h3 id="not-an-agent-based-modeling-framework"><strong>Not</strong> an agent-based modeling framework</h3>
-<p>Although agent-based modeling (ABM) and aggregate programming both concern phenomena that occur when many individuals interact, they approach these phenomena in different ways.
-In ABM, you usually specify an individual’s behavior and interaction rules, and then simulate a collection of individuals to see what large-scale phenomena occur.
-In aggregate programming, you specify the desired collective action, which is then transformed into a distributed implementation for individual machines.</p>
-<h3 id="not-a-simulation-platform"><strong>Not</strong> a simulation platform</h3>
-<p>Protelis is a programming language which can be used <em>within</em> simulation frameworks, but that per-se ships no simulation platform.
-One of the nice things you get out of it is that, if the simulation implementation respects the reference,
-the code written for a simulation can be reused as-is inside a deployed system.</p>
-<h1 id="who-uses-it-the-protelis-community">Who uses it? The Protelis community</h1>
-<h3 id="alma-mater-studiorumuniversità-di-bologna-italy">Alma Mater Studiorum—Università di Bologna (Italy)</h3>
-<p>Protelis is used in a variety of experiments and demos by the research group led by <a href="https://www.unibo.it/sitoweb/mirko.viroli/en">prof. Mirko Viroli</a>.
-The team includes <a href="https://www.unibo.it/sitoweb/danilo.pianini/en">Danilo Pianini</a>, chief architect and main developer of Protelis,
-and <a href="https://www.unibo.it/sitoweb/roby.casadei/en">Roberto Casadei</a>, lead developer of <a href="https://scafi.github.io/">Scafi</a>,
-a Scala internal DSL for aggregate programming.</p>
-<h3 id="raytheon-bbn-technologies-usa">Raytheon BBN Technologies (USA)</h3>
-<ul>
-<li><a href="https://jakebeal.github.io/">Jacob Beal</a></li>
-<li><a href="https://scholar.google.com/citations?user=oBq3jv0AAAAJ&amp;hl=en">Shane Clark</a></li>
-<li><a href="http://kyle.usbeck.us/">Kyle Usbeck</a></li>
-</ul>
-<h3 id="università-di-torino-italy">Università di Torino (Italy)</h3>
-<ul>
-<li><a href="http://www.di.unito.it/~damiani/">Ferruccio Damiani</a></li>
-<li><a href="http://giorgio.audrito.info/#!/research">Giorgio Audrito</a></li>
-</ul>
-<h3 id="fondazione-bruno-kessler-italy">Fondazione Bruno Kessler (Italy)</h3>
-<ul>
-<li><a href="https://das.fbk.eu/people/profile/bucchiarone">Antonio Bucchiarone</a></li>
-</ul>
+                        <p><strong>Note:</strong> This example uses an old version of Protelis. As such, the provided code might not work with newer releases.</p>
+<h1 id="network-services-management">Network services management</h1>
+<p>This example has been presented in the paper:</p>
+<p><a href="https://doi.org/10.1145/2695664.2695913"><strong>Protelis: Practical Aggregate Programming</strong> <em>by Danilo Pianini, Mirko Viroli, Jacob Beal; published in the Proceedings of the 30th Annual ACM Symposium on Applied Computing, April 2015</em></a></p>
+<p>A common problem in managing enterprise services is a failure in one or more services can cause the overall system to get wedged,
+due to many dependences between different services and server.
+After such a failure cascade, the network can only become fully functional by restarting the servers and services in the correct order.
+Network services management can coordinate the order of shutdown and restarts.</p>
+<p>Using Protelis and the principles of aggregate programming,
+it is straightforward to write a daemon to monitor each service and communicate with other services to execute a coordinated shutdown and restart.
+We illustrate how dependency-directed coordination can be implemented with very little code.</p>
+<p><img src="https://protelis.github.io/wiki-beta/assets/media/images/examples/sac2015networkmanagement/dependent-services-network.png" alt="Dependent Service Network" /></p>
+<p>This example scenario features an enterprise network for a small company,
+with dependencies between two key databases and the internal and external servers running web applications.
+The scenario was implemented on a network of EmuLab servers,
+with the services emulated as simple query-response networking programs in Java that entered a “hung” state
+either by being externally triggered to crash or after their queries began to consistently fail.</p>
+<p>Each service was wrapped with an embedded Protelis execution engine,
+which was interfaced with the services by a small piece of monitoring glue code that inserted environment variables
+containing an indentifier for the <code>serviceID</code> running on that server,
+a tuple of identifier for <code>dependencies</code>,
+and the current <code>managedServiceStatus</code> of <code>stop</code>, <code>starting</code>, <code>run</code>, <code>stopping</code>, or <code>hung</code>.
+The glue code also provided <code>stopService</code> and <code>startService</code> methods to send signals to the service,
+track interactions between the services in order to maintain the set of neighbors for Protelis,
+and allowed an external monitoring applications to attach and receive status reports.</p>
+<p><img src="https://protelis.github.io/wiki-beta/assets/media/images/examples/sac2015networkmanagement/restart.png" alt="Distributed Restart" /></p>
+<p>In this screenshot of the emulated network of services on machines, we see that the supplies database has crashed,
+triggering a graceful shutdown cascade of dependent services. Upon restart of the supplies database,
+the rest of the services would automatically restart in the correct order,
+if each service was running the following Protelis network management code.</p>
+<p>These variables track the services that should be reachable (<code>nbr_set</code>),
+the services that are needed but are not reachable (<code>nbr_missing</code>),
+the services that are required due to dependencies (<code>nbr_required</code>),
+and the nearby services that are down (<code>nbr_down</code>).</p>
+<pre><code class="language-javascript">let nbr_set = unionHood(nbr([serviceID]));
+let nbr_missing = dependencies.subtract(nbr_set);
+let nbr_required = #contains(dependencies, nbr(serviceID));
+let nbr_down = nbr(managedServiceStatus == &quot;hung&quot; || managedServiceStatus == &quot;stop&quot;);
+</code></pre>
+<p>The variable <code>problem</code> tracks whether this service is currently safe to run.</p>
+<pre><code class="language-javascript">let problem = anyHood(nbr_down &amp;&amp; nbr_required) || !nbr_missing.isEmpty();
+</code></pre>
+<p>This code takes this service down or up, depending on if it is safe to run.</p>
+<pre><code class="language-javascript">if(managedServiceStatus == &quot;run&quot; &amp;&amp; problem) {
+  #stopProcess(managedService);
+} else  {
+  if(managedServiceStatus == &quot;stop&quot; &amp;&amp; !problem) {
+    #startProcess(managedService);
+  } else  {
+    managedServiceStatus;
+  }
+}
+</code></pre>
 
                     
                 
@@ -293,6 +305,13 @@ a Scala internal DSL for aggregate programming.</p>
         <div class="col-xs-12">
             <nav aria-label="navigateClasses">
                 <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning">
+                                <span aria-hidden="true">&larr;</span>
+                                <span>[0.1.0] Peer-to-peer route planning</span>
+                            </a>
+                        </li>
                     
 
                     

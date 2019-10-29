@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+
+
+<meta charset="utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+<meta name="generator" content="Orchid 0.17.5"/>
+<link rel="icon" href="http://localhost:8080/favicon.ico">
+
+
+<meta name="robots" content="index, follow">
+
+
+
+<title>The Alchemist Simulator metamodel</title>
+
+
+<meta name="description" content="Practical aggregate programming.">
+
+
+
+<link rel="prev" href="http://localhost:8080/wiki/simulator">
+
+
+<link rel="next" href="http://localhost:8080/wiki/usage">
+
+
+<script>
+    window.site = {"orchidVersion":"0.17.5","baseUrl":"http://localhost:8080","environment":"debug","version":"13.0.3-dev18+2bb83c70"};
+</script>
+
+
+
+
+
+<!-- start:debug info -->
+
+<!-- THEME -->
+<!-- Type: BsDoc -->
+<!-- Class: com.eden.orchid.bsdoc.BSDocTheme -->
+
+<!-- PAGE -->
+<!-- Type: wiki -->
+<!-- Class: com.eden.orchid.wiki.pages.WikiPage -->
+<!-- Layout: index -->
+<!-- Resolved Layout: templates/layouts/index.peb -->
+<!-- Page Template: wiki, page -->
+<!-- Resolved Page Template:  -->
+
+<!-- RESOURCE -->
+<!-- Class: com.eden.orchid.api.resources.resource.FileResource -->
+<!-- Source Filename: wiki/simulator/metamodel.md -->
+
+<!-- COMPLETE PAGE CONFIGURATION -->
+<script>
+    window.allData = {"reference":{"path":"wiki/simulator","baseUrl":"http://localhost:8080","fileName":"metamodel","extension":"html","usePrettyUrl":true,"link":"http://localhost:8080/wiki/simulator/metamodel"},"next":{"path":"wiki","baseUrl":"http://localhost:8080","fileName":"usage","extension":"html","usePrettyUrl":true,"link":"http://localhost:8080/wiki/usage"},"previous":{"path":"wiki","baseUrl":"http://localhost:8080","fileName":"simulator","extension":"html","usePrettyUrl":true,"link":"http://localhost:8080/wiki/simulator"},"description":"","title":"The Alchemist Simulator metamodel"};
+</script>
+
+<!-- end:debug info -->
+
+
+
+<!-- start:inject styles -->
+<link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/BsDoc/447b9123/assets/css/bsdoc.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/assets/css/pygments.css"/>
+<link rel="stylesheet" type="text/css" href="https://rawgit.com/PrismJS/prism-themes/master/themes/prism-ghcolors.css"/>
+<!-- end:inject styles -->
+
+
+</head>
+<body>
+
+
+
+
+<a class="github-fork-ribbon left-top"
+   href="https://github.com/Protelis/Protelis"
+   title="Fork me on GitHub">Fork me on GitHub</a>
+
+
+<header class="navbar navbar-fixed-top bs-docs-nav">
+    <div class="container">
+        <div class="navbar-header" role="banner">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://localhost:8080">Protelis: the language for aggregate computing</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    
+                        <li><a href="http://localhost:8080">Home</a></li>
+                    
+                
+                    
+                        <li><a href="">Documentation</a></li>
+                    
+                
+                    
+                        <li><a href="http://localhost:8080/wiki/quickstart">Quick start</a></li>
+                    
+                
+                    
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Language<span class="caret"></span></a>
+                            <ul class="dropdown-menu scrollable-menu">
+                                
+                                    <li><a href="http://localhost:8080/wiki/language/syntax">Changelog</a></li>
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Understanding Alchemist<span class="caret"></span></a>
+                            <ul class="dropdown-menu scrollable-menu">
+                                
+                                    <li><a href="http://localhost:8080/wiki/simulator/metamodel">The Alchemist Simulator metamodel</a></li>
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Using Alchemist<span class="caret"></span></a>
+                            <ul class="dropdown-menu scrollable-menu">
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/installation">Requirements and installation</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/quickstart">Quick start</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/yaml">Writing Alchemist simulations</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/gui">Alchemist graphical interface</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/biochemistry">Alchemist biochemistry incarnation</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/protelis">Alchemist Protelis incarnation</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/sapere">SAPERE</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/scafi">Scafi</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/indoor">Simulation of indoor environments</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/cognitive-agents">Using Cognitive Agents</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/smartcam">With Smart Cameras</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/maps">Maps and GPS traces</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/export">Exporting data</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/batch">Executing batches</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/grid">Grid computing support</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/customization">Writing custom components</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/usage/issues">Troubleshooting and known issues</a></li>
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Simulation examples<span class="caret"></span></a>
+                            <ul class="dropdown-menu scrollable-menu">
+                                
+                                    <li><a href="http://localhost:8080/wiki/examples/protelis">With Protelis</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/examples/scafi">With Scafi</a></li>
+                                
+                                    <li><a href="http://localhost:8080/wiki/examples/maps">On maps</a></li>
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li><a href="http://localhost:8080/wiki/license">License</a></li>
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<div id="top"></div>
+
+
+    <div class="bs-docs-masthead" id="jumbotron">
+        <div class="container">
+            <h1 class="home-title">The Alchemist Simulator metamodel</h1>
+        </div>
+    </div>
+
+
+<div class="container bs-docs-container">
+    <div class="row">
+        <div class="col-md-9" role="main">
+        <nav aria-label="breadcrumb">
+    <ul class="breadcrumb">
+    
+    
+        <li class="breadcrumb-item"><a href="http://localhost:8080/wiki">Wiki</a></li>
+    
+    
+    
+        <li class="breadcrumb-item active" aria-current="page">The Alchemist Simulator metamodel</li>
+    
+    
+    </ul>
+</nav>
+        
+
+        
+        
+            
+    <!-- start:inject components -->
+    
+        
+            
+                
+                    
+                        <h2 id="the-world-of-alchemist">The world of Alchemist</h2>
+<p>The first step to take in order to use the simulator, is to answer the question</p>
+<blockquote>
+<p>what does Alchemist simulate?</p>
+</blockquote>
+<h3 id="the-model">The model</h3>
+<p>The world of Alchemist is composed of the following entities:</p>
+<ul>
+<li><strong>Molecule</strong>
+<ul>
+<li>The name of a data item</li>
+<li>If Alchemist were an imperative programming language, a <em>molecule</em> would be the concept of <em>variable name</em></li>
+</ul>
+</li>
+<li><strong>Concentration</strong>
+<ul>
+<li>The value associated to a particular <em>molecule</em></li>
+<li>If Alchemist were an imperative programming language, a <em>concentration</em> would be the concept of <em>value associated to a variable</em></li>
+</ul>
+</li>
+<li><strong>Node</strong>
+<ul>
+<li>A container of <em>molecules</em> and <em>reactions</em>, living inside an <em>environment</em></li>
+</ul>
+</li>
+<li><strong>Environment</strong>
+<ul>
+<li>The Alchemist abstration for the space. It is a container for <em>nodes</em>, and it is able to tell:
+<ol>
+<li>Where the nodes are in the space - i.e. their <em>position</em></li>
+<li>The distance between two <em>nodes</em></li>
+<li>Optionally, support for moving <em>nodes</em></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>Linking rule</strong>
+<ul>
+<li>A function of the current status of the environment that associates to each <em>node</em> a <em>neighborhood</em></li>
+</ul>
+</li>
+<li><strong>Neighborhood</strong>
+<ul>
+<li>An entity composed by a <em>node</em> (centre) and a set of <em>nodes</em> (neighbors)</li>
+</ul>
+</li>
+<li><strong>Reaction</strong>
+<ul>
+<li>Any event that can change the status of the <em>environment</em></li>
+<li>Each <em>node</em> has a possibly empty set of <em>reactions</em></li>
+<li>Each reaction is defined by a possibly empty list of <em>conditions</em>, one or more <em>actions</em> and a <em>time distribution</em></li>
+<li>The frequency at which it happens depends on:
+<ol>
+<li>A static &quot;rate&quot; parameter</li>
+<li>The value of each <em>condition</em></li>
+<li>A &quot;rate equation&quot;, that combines the static rate and the value of conditions, giving back an &quot;instantaneous rate&quot;</li>
+<li>A <em>time distribution</em></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>Condition</strong>
+<ul>
+<li>A function that takes the current <em>environment</em> as input and outputs a boolean and a number</li>
+<li>If the <em>condition</em> does not hold (i.e. its current output is <code>false</code>), the <em>reaction</em> to which it is associated cannot run</li>
+<li>The outputed number may or may not influence the <em>reaction</em> speed (i.e. the average number of times the <em>reaction</em> &quot;happens&quot; per time unit), depending on the <em>reaction</em> and its <em>time distribution</em>.</li>
+</ul>
+</li>
+<li><strong>Action</strong>
+<ul>
+<li>Models a change in the environment.</li>
+</ul>
+</li>
+</ul>
+<p>The following image is a visualization of such model:</p>
+<p><img src="" alt="Alchemist model" /></p>
+<p>The behavior of the system is described in terms of reactions. As such, here's a pictorial representation of a reaction:</p>
+<p><img src="" alt="Alchemist reaction" /></p>
+<h3 id="incarnations">Incarnations</h3>
+<p>As you can see, names are given after classical chemistry terms.
+This is mostly for historical reasons: Alchemist has been initially conceived as a chemical-oriented multi-compartment
+stochastic simulation engine, able to support compartment (node) mobility while still retaining high performance.</p>
+<p>However, Alchemist is not limited to that. The key of its extensibility is in the very loose interpretation of
+<strong>molecule</strong> and <strong>concentration</strong>. These two terms have a very precise definition in chemistry, but in Alchemist they
+are respectively</p>
+<ol>
+<li>a generic identifier, and</li>
+<li>a piece of data of some <strong>type</strong></li>
+</ol>
+<p>An <strong>incarnation</strong> of Alchemist includes a <strong>type</strong> definition of <strong>concentration</strong>,
+and possibly a set of specific conditions, actions and (rarely) environments and reactions that operate on such types.
+In other words, an incarnation is a concrete instance of the Alchemist meta-model.
+In addition, a proper Alchemist incarnation must also define:</p>
+<ul>
+<li>Means for translating strings into named entities (molecules)</li>
+<li>Means for obtaining a number when given a node, a molecule and a string representing a property</li>
+<li>Means for building incarnation-specific model entities given an appropriate context and a parameter String</li>
+</ul>
+<p>These functionalities are required in order to support a uniform access to different incarnations.</p>
+<p>Different Incarnations can model completely different universes.
+For instance, if the concentration is defined as a positive integer and proper actions and conditions are provided,
+Alchemist becomes a stochastic simulator for chemistry featuring interconnected and mobile compartments.</p>
+<p>The standalone distribution comes with:</p>
+<ul>
+<li><a href="http://protelis.org">Protelis Incarnation</a></li>
+<li><a href="http://dx.doi.org/10.1016/j.pmcj.2014.12.002">SAPERE Incarnation</a></li>
+<li>Biochemistry Incarnation</li>
+<li><a href="https://scafi.github.io/">Scafi incarnation</a></li>
+</ul>
+<p>More details on how to use each of the included incarnations will be provided after this introductory chapter.</p>
+<h2 id="the-tool">The tool</h2>
+<p>The core part of the tool is the incarnation-agnostic simulation engine.
+Its current implementation is based on <a href="http://dx.doi.org/10.1021/jp993732q">Gibson and Bruck's Next Reaction</a>,
+extended to support addition and removal of reactions, and improved using input and output contexts for reactions,
+in order to prune the dependency graph as much as possible.
+More details on that are demanded to <a href="http://dx.doi.org/10.1057/jos.2012.27">this scientific paper on Journal of Simulation</a>.</p>
+<p>The engine's entry point is the Simulation.
+It is equipped with support for commands like play, pause and stop, and can be equipped with an OutputMonitor.
+The output monitor can be a graphical interface, a logger or any kind of environment inspector.</p>
+
+                    
+                
+            
+        
+            
+        
+    
+    <!-- end:inject components -->
+
+
+        
+        </div>
+
+        <!-- Page navigation
+        =========================================== -->
+        <div class="col-md-3" role="complementary">
+        <div class="bs-docs-sidebar hidden-print" id="bs-docs-sidebar">
+    
+
+    <ul class="nav bs-docs-sidenav">
+        
+    </ul>
+
+    
+    <!-- start:inject components -->
+    
+    <!-- end:inject components -->
+
+
+
+    <a class="back-to-top" href="#top">
+        <i class="glyphicon glyphicon-chevron-up"></i> Back to top
+    </a>
+</div>
+
+        </div>
+    </div>
+</div>
+
+
+<div id="footer">
+    <div class="container bs-docs-container">
+    <footer class="bs-docs-footer" role="contentinfo">
+    <div class="row">
+        <div class="col-xs-12">
+            <nav aria-label="navigateClasses">
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="http://localhost:8080/wiki/simulator">
+                                <span aria-hidden="true">&larr;</span>
+                                <span>Understanding Alchemist</span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li class="next">
+                            <a href="http://localhost:8080/wiki/usage">
+                                <span>Using Alchemist</span>
+                                <span aria-hidden="true">&rarr;</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="icons">
+    
+    
+        <a href="https://github.com/Protelis/Protelis" class="fa fa-github"></a>
+    
+    
+    </div>
+    <br>
+    <p>
+    Documentation template based on the
+    <a href="https://github.com/mistic100/jekyll-bootstrap-doc">Jekyll Bootstrap Doc</a>
+    Jekyll theme by the <a href="https://getbootstrap.com">Bootstrap team</a>. Site created with
+    <a href="https://orchid.netlify.com">Orchid</a>.
+</p>
+
+<ul class="bs-docs-footer-links muted">
+    <li>Currently 13.0.3-dev18+2bb83c70</li>
+</ul>
+
+</footer>
+    </div>
+</div>
+
+
+<!-- start:inject scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.min.js"></script>
+<script src="http://localhost:8080/BsDoc/447b9123/assets/js/bsdoc.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-kotlin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-java.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-groovy.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-yaml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-asciidoc.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-python.min.js"></script>
+<!-- end:inject scripts -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/1.2.0/trianglify.min.js"></script>
+
+<script>
+    $(function () {
+        window.colors = ['#2299d8', '#000000'];
+                  
+    trianglify({});
+
+        buildNav();
+    });
+</script>
+
+</body>
+</html>

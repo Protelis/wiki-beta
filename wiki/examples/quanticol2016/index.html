@@ -16,13 +16,17 @@
 
 
 
-<title>Protelis: aggregate programming</title>
+<title>[13.1.0-dev0d+10aa36bd] Crowd danger estimation and warning</title>
 
 
 <meta name="description" content="Practical language for aggregate programming.">
 
 
 
+<link rel="prev" href="https://protelis.github.io/wiki-beta/wiki/examples">
+
+
+<link rel="next" href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning">
 
 
 <script>
@@ -40,20 +44,20 @@
 <!-- Class: com.eden.orchid.bsdoc.BSDocTheme -->
 
 <!-- PAGE -->
-<!-- Type: frontPage -->
-<!-- Class: com.eden.orchid.api.theme.pages.OrchidPage -->
+<!-- Type: wiki -->
+<!-- Class: com.eden.orchid.wiki.pages.WikiPage -->
 <!-- Layout: index -->
 <!-- Resolved Layout: templates/layouts/index.peb -->
-<!-- Page Template: frontPage, page -->
+<!-- Page Template: wiki, page -->
 <!-- Resolved Page Template:  -->
 
 <!-- RESOURCE -->
-<!-- Class: com.eden.orchid.api.resources.resource.FileResource -->
-<!-- Source Filename: homepage.md -->
+<!-- Class: com.eden.orchid.api.resources.resource.StringResource -->
+<!-- Source Filename: wiki/examples/quanticol2016/index.md -->
 
 <!-- COMPLETE PAGE CONFIGURATION -->
 <script>
-    window.allData = {"reference":{"path":"","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta"},"description":"","title":"Protelis: aggregate programming"};
+    window.allData = {"reference":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"quanticol2016","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/quanticol2016"},"next":{"path":"wiki/examples","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"sac2015p2pplanning","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning"},"previous":{"path":"wiki","baseUrl":"https://protelis.github.io/wiki-beta","fileName":"examples","extension":"html","usePrettyUrl":true,"link":"https://protelis.github.io/wiki-beta/wiki/examples"},"description":"","title":"[13.1.0-dev0d+10aa36bd] Crowd danger estimation and warning"};
 </script>
 
 <!-- end:debug info -->
@@ -170,7 +174,7 @@
 
     <div class="bs-docs-masthead" id="jumbotron">
         <div class="container">
-            <h1 class="home-title">Protelis: aggregate programming</h1>
+            <h1 class="home-title">[13.1.0-dev0d+10aa36bd] Crowd danger estimation and warning</h1>
         </div>
     </div>
 
@@ -182,7 +186,11 @@
     <ul class="breadcrumb">
     
     
-        <li class="breadcrumb-item active" aria-current="page">Protelis: aggregate programming</li>
+        <li class="breadcrumb-item"><a href="https://protelis.github.io/wiki-beta/wiki">Wiki</a></li>
+    
+    
+    
+        <li class="breadcrumb-item active" aria-current="page">[13.1.0-dev0d+10aa36bd] Crowd danger estimation and warning</li>
     
     
     </ul>
@@ -198,53 +206,7 @@
             
                 
                     
-                        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#00aba9">
-<meta name="theme-color" content="#ffffff">
-<h1 id="protelis-logo-why-protelis-what-is-it"><img src="https://protelis.github.io/wiki-beta/assets/media/images/logo_scale-0.08.png" alt="Protelis Logo" /> Why Protelis? What is it?</h1>
-<p>Protelis is a programming language designed for people who want to get resilient collective behavior from a complex network of heterogeneous machines.
-Protelis leverages <em>aggregate programming</em> for applications like the Internet of Things or flocking robots.
-It lets you think about what you want the collection of machines to accomplish, rather than what you need each individual machine to do.</p>
-<p>The goal of the Protelis language is to make it easier to build a resilient and well-behaved networked system out of an assortment of different potentially mobile devices.
-Protelis is designed for the paradigm of &quot;aggregate programming&quot;,
-a way of thinking about and decomposing problems that can be solved with a network of distributed sensors and computers.
-Aggregate programming tries to produce reliable and robust collective behavior from uncoordinated local interactions between machines.
-That's hard to do, but Protelis helps!</p>
-<p><img src="https://protelis.github.io/wiki-beta/assets/media/images/overview.png" alt="Protelis Logo" /></p>
-<h1 id="what-is-it-not">What is it <strong>not</strong>?</h1>
-<h3 id="not-an-agent-based-modeling-framework"><strong>Not</strong> an agent-based modeling framework</h3>
-<p>Although agent-based modeling (ABM) and aggregate programming both concern phenomena that occur when many individuals interact, they approach these phenomena in different ways.
-In ABM, you usually specify an individual’s behavior and interaction rules, and then simulate a collection of individuals to see what large-scale phenomena occur.
-In aggregate programming, you specify the desired collective action, which is then transformed into a distributed implementation for individual machines.</p>
-<h3 id="not-a-simulation-platform"><strong>Not</strong> a simulation platform</h3>
-<p>Protelis is a programming language which can be used <em>within</em> simulation frameworks, but that per-se ships no simulation platform.
-One of the nice things you get out of it is that, if the simulation implementation respects the reference,
-the code written for a simulation can be reused as-is inside a deployed system.</p>
-<h1 id="who-uses-it-the-protelis-community">Who uses it? The Protelis community</h1>
-<h3 id="alma-mater-studiorumuniversità-di-bologna-italy">Alma Mater Studiorum—Università di Bologna (Italy)</h3>
-<p>Protelis is used in a variety of experiments and demos by the research group led by <a href="https://www.unibo.it/sitoweb/mirko.viroli/en">prof. Mirko Viroli</a>.
-The team includes <a href="https://www.unibo.it/sitoweb/danilo.pianini/en">Danilo Pianini</a>, chief architect and main developer of Protelis,
-and <a href="https://www.unibo.it/sitoweb/roby.casadei/en">Roberto Casadei</a>, lead developer of <a href="https://scafi.github.io/">Scafi</a>,
-a Scala internal DSL for aggregate programming.</p>
-<h3 id="raytheon-bbn-technologies-usa">Raytheon BBN Technologies (USA)</h3>
-<ul>
-<li><a href="https://jakebeal.github.io/">Jacob Beal</a></li>
-<li><a href="https://scholar.google.com/citations?user=oBq3jv0AAAAJ&amp;hl=en">Shane Clark</a></li>
-<li><a href="http://kyle.usbeck.us/">Kyle Usbeck</a></li>
-</ul>
-<h3 id="università-di-torino-italy">Università di Torino (Italy)</h3>
-<ul>
-<li><a href="http://www.di.unito.it/~damiani/">Ferruccio Damiani</a></li>
-<li><a href="http://giorgio.audrito.info/#!/research">Giorgio Audrito</a></li>
-</ul>
-<h3 id="fondazione-bruno-kessler-italy">Fondazione Bruno Kessler (Italy)</h3>
-<ul>
-<li><a href="https://das.fbk.eu/people/profile/bucchiarone">Antonio Bucchiarone</a></li>
-</ul>
+                        <p>[13.1.0-dev0d+10aa36bd] Crowd danger estimation and warning</p>
 
                     
                 
@@ -294,7 +256,21 @@ a Scala internal DSL for aggregate programming.</p>
             <nav aria-label="navigateClasses">
                 <ul class="pager">
                     
+                        <li class="previous">
+                            <a href="https://protelis.github.io/wiki-beta/wiki/examples">
+                                <span aria-hidden="true">&larr;</span>
+                                <span>Examples and demos</span>
+                            </a>
+                        </li>
+                    
 
+                    
+                        <li class="next">
+                            <a href="https://protelis.github.io/wiki-beta/wiki/examples/sac2015p2pplanning">
+                                <span>[0.1.0] Peer-to-peer route planning</span>
+                                <span aria-hidden="true">&rarr;</span>
+                            </a>
+                        </li>
                     
                 </ul>
             </nav>
